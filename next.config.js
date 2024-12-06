@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
-const withTM = require('next-transpile-modules')(['@square/web-sdk', 'react-square-web-payments-sdk']);
+
+const withTM = require('next-transpile-modules')(['@square/web-sdk', 'react-square-web-payments-sdk'])
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = withTM({
+module.exports = withTM ({
   reactStrictMode: false,
   webpack(config) {
     config.resolve.fallback = {
@@ -19,6 +20,9 @@ module.exports = withTM({
     });
     return config;
   },
+});
+
+const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -27,7 +31,7 @@ module.exports = withTM({
     remotePatterns: [
       {
         protocol: "https",
-        hostname: process.env.WORDPRESS_HOSTNAME || "ryseupsolutionsllc.com", // Provide a fallback
+        hostname: process.env.WORDPRESS_HOSTNAME,
         port: "",
         pathname: "/**",
       },
@@ -39,4 +43,6 @@ module.exports = withTM({
       },
     ],
   },
-});
+};
+
+module.exports = nextConfig;
