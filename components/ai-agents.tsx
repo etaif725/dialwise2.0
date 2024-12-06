@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,7 @@ import {
   BookOpen, Building, Scale, Briefcase
 } from "lucide-react";
 import ConfettiBtnFX from "./ConfettiBtnFX";
+import { useTheme } from "next-themes";
 
 const agents = {
   "real-estate": {
@@ -167,6 +168,15 @@ export default function AIAgents() {
 
   const [selectedAgent, setSelectedAgent] = useState("real-estate");
 
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  // Only show logo after client-side hydration is complete
+  const logoSrc = !mounted ? '/dialwise-logo' : theme === 'dark' ? '/dialwise-logo-w.webp' : '/dialwise-logo.webp';
+
   return (
     <section className="py-24 relative overflow-hidden bg_pattern_top">
       <div className="container mx-auto px-4">
@@ -309,6 +319,17 @@ export default function AIAgents() {
                   >
                     <div className="mt-6 p-6 rounded-md max-w-lg mx-auto">
                           <form onSubmit={handleSubmit} className="space-y-4">
+                            {/* Logo */}
+                            <div className="relative justify-center flex items-center space-x-2 py-4">
+                              <Image
+                                src={logoSrc}
+                                alt="DialWise.ai logo"
+                                height={36}
+                                width={196}
+                                className="object-contain"
+                                priority
+                              />
+                            </div>
                             <div>
                               <label className="block text-sm font-medium text-gray-700" htmlFor="firstName">
                                 First Name
