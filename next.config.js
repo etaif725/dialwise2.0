@@ -24,5 +24,19 @@ module.exports = withTM({
   },
   images: { 
     unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: process.env.WORDPRESS_HOSTNAME || "ryseupsolutionsllc.com", // Provide a fallback
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 });
