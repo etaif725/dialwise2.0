@@ -56,7 +56,7 @@ const IntegrationsSection = () => {
                 alt={integration.name}
                 width={124}
                 height={38}
-                className="object-contain dark:fill-white fill-black"
+                className="object-contain filter transition-all duration-300 brightness-0 dark:invert dark:brightness-0"
               />
             </motion.div>
           ))}
