@@ -317,7 +317,7 @@ export default function AIAgents() {
                     className="mx-auto p-6 bg-no-repeat mt-8"
                     style={{ backgroundImage: "url('/mobile-img-layout-p-1080.webp')", backgroundSize: "cover" }}
                   >
-                    <div className="mt-6 p-6 mx-auto">
+                    <div className="mt-6 p-12 mx-auto">
                           <form onSubmit={handleSubmit} className="space-y-4">
                             {/* Logo */}
                             <div className="relative justify-center flex items-center space-x-2 py-4">
