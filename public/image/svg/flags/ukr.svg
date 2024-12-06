@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="800"
+   height="800"
+   version="1.1"
+   id="svg3103"
+   sodipodi:docname="ukranianflag.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3107" />
+  <sodipodi:namedview
+     id="namedview3105"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.24333333"
+     inkscape:cx="-154.10959"
+     inkscape:cy="353.42466"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3103" />
+  <rect
+     width="800"
+     height="800"
+     fill="#0057b7"
+     id="rect3099"
+     x="0"
+     y="0"
+     style="stroke-width:0.816497" />
+  <rect
+     width="800"
+     height="400"
+     y="400"
+     fill="#ffd700"
+     id="rect3101"
+     x="0"
+     style="stroke-width:0.816497" />
+</svg>

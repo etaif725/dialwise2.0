@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="600"
+   height="600"
+   viewBox="-36 -24 48 48"
+   version="1.1"
+   id="svg2124"
+   sodipodi:docname="koreanflag.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2128" />
+  <sodipodi:namedview
+     id="namedview2126"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.45883373"
+     inkscape:cx="184.16257"
+     inkscape:cy="202.6878"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2124" />
+  <path
+     d="M -36,-24 H 12 V 24 H -36 Z"
+     fill="#ffffff"
+     id="path2102"
+     style="stroke-width:0.816497" />
+  <g
+     transform="matrix(0.32050294,-0.48075442,0.48075442,0.32050294,-12,0)"
+     id="g2116">
+    <g
+       id="b2">
+      <path
+         id="b"
+         d="M -6,-26 H 6 v 2 H -6 Z m 0,3 H 6 v 2 H -6 Z m 0,3 H 6 v 2 H -6 Z" />
+      <use
+         xlink:href="#b"
+         y="44"
+         id="use2105" />
+    </g>
+    <path
+       stroke="#ffffff"
+       d="M 0,17 V 27"
+       id="path2108" />
+    <path
+       fill="#cd2e3a"
+       d="M 0,-12 A 12,12 0 0 1 0,12 Z"
+       id="path2110" />
+    <path
+       fill="#0047a0"
+       d="M 0,-12 A 12,12 0 0 0 0,12 6,6 0 0 0 0,0 Z"
+       id="path2112" />
+    <circle
+       cy="-6"
+       fill="#cd2e3a"
+       r="6"
+       id="circle2114"
+       cx="0" />
+  </g>
+  <g
+     transform="matrix(-0.32050294,-0.48075442,0.48075442,-0.32050294,-12,0)"
+     id="g2122">
+    <use
+       xlink:href="#b2"
+       id="use2118" />
+    <path
+       stroke="#ffffff"
+       d="m 0,-23.5 v 3 M 0,17 v 3.5 m 0,3 v 3"
+       id="path2120" />
+  </g>
+</svg>

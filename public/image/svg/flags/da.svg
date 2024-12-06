@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 28.285887 28"
+   version="1.1"
+   id="svg885"
+   sodipodi:docname="danishflag.svg"
+   width="28.285887"
+   height="28"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs889" />
+  <sodipodi:namedview
+     id="namedview887"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="14.803571"
+     inkscape:cx="19.758745"
+     inkscape:cy="21.143546"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg885" />
+  <path
+     fill="#c8102e"
+     d="M 0,0 H 28.285887 V 28 H 0 Z"
+     id="path881"
+     style="stroke-width:0.874347" />
+  <path
+     stroke="#ffffff"
+     stroke-width="4"
+     d="M 0,14 H 28.285887 M 14,0 v 28"
+     id="path883"
+     sodipodi:nodetypes="cccc" />
+</svg>
