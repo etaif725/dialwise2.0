@@ -11,7 +11,7 @@ const DialWiseChatbot: React.FC = () => {
       render: 'bottom-right', // Can be 'full-width', 'bottom-left', or 'bottom-right'
       stylesheets: [
         // Base DialWise Agents CSS
-        "https://dialwise.ai/css/dialwise-chabot.css",
+        "https://dialwise.ai/css/dialwise-chatbot.css",
         // Add your custom CSS stylesheets
       ],
       // Uncomment if needed:
@@ -21,7 +21,7 @@ const DialWiseChatbot: React.FC = () => {
 
     // Append the DialWise script to the document body
     const VG_SCRIPT = document.createElement("script");
-    VG_SCRIPT.src = "https://dialwise.ai/js/dialwise-chabot.js";
+    VG_SCRIPT.src = "https://etaif725.github.io/vg-hosting-template-v2/assets/vg_live_build/vg_bundle.js";
     VG_SCRIPT.defer = true; // Remove 'defer' if you want the widget to load faster (may affect website loading)
     document.body.appendChild(VG_SCRIPT);
 

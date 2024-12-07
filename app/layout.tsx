@@ -14,6 +14,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Analytics />
+      <DialWiseChatbot />
+      <Metadata />
       <body className="min-h-screen bg-background text-foreground">
         <ThemeProvider
           attribute="class"
@@ -27,7 +29,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
-        <DialWiseChatbot />
+        <div style={{width: 0, height: 0}} id="VG_OVERLAY_CONTAINER">
+        </div>
       </body>
     </html>
   );
