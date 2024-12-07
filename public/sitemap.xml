@@ -59,10 +59,4 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://dialwise.ai/partners/agency</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
 </urlset>
