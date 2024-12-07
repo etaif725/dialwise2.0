@@ -6,9 +6,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Metadata from "../Metadata";
 
 export default function Contact() {
   return (
+    <>
+    {/* Metadata component to update dynamic SEO for this page */}
+    <Metadata
+      title="Got Questions about AI Voice Agents & Chatbots? Click here | DialWise.ai"
+      description="Get in touch with our team for any questions or support needs. DialWise.ai is a leading provider of AI voice agents and chatbots."
+      ogImage="/demo_dialwise.webp"
+      twitterImage="/demo_dialwise.webp"
+      keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
+    />
     <div className="min-h-screen pt-20 bg_pattern_top">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -71,5 +81,6 @@ export default function Contact() {
         </div>
       </motion.div>
     </div>
+    </>
   );
 }

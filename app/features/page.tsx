@@ -23,6 +23,7 @@ import ChatModal from "@/components/chat-modal";
 import ChallengesGrid from "@/components/challenges-grid";
 import CTA from "@/components/cta";
 import LeadForm from "@/components/lead_form";
+import Metadata from "../Metadata";
 
 const features = [
   {
@@ -111,6 +112,15 @@ export default function Features() {
   const [selectedFeature, setSelectedFeature] = useState(features[0]);
 
   return (
+    <>
+    {/* Metadata component to update dynamic SEO for this page */}
+    <Metadata
+      title="DialWise.ai Main Benefits & Features | DialWise.ai"
+      description="DialWise.ai Main Benefits & Features: Transform your business communication with AI-powered solutions that save time, reduce costs, and improve customer satisfaction."
+      ogImage="/demo_dialwise.webp"
+      twitterImage="/demo_dialwise.webp"
+      keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
+    />
     <div className="min-h-screen pt-20 bg_pattern_top">
       {/* Hero Section */}
       <section className="py-20">
@@ -244,5 +254,6 @@ export default function Features() {
           <LeadForm isOpen={isLeadFormOpen} onClose={() => setIsLeadFormOpen(false)} />
         )}
     </div>
+    </>
   );
 }

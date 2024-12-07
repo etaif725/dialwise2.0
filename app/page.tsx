@@ -4,18 +4,16 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import AdvantagesGrid from "@/components/advantages-grid";
-import Pricing from "@/components/pricing/pricing-home";
 import Testimonials from "@/components/testimonials/testimonials";
 import CTA from "@/components/cta";
 import IntegrationsSection from "@/components/integrationsSection";
 import AIAgents from "@/components/ai-agents";
 import CalendarModal from "@/components/calendar-modal";
-import ChatModal from "@/components/chat-modal";
 import { Calendar, MessageSquare } from "lucide-react";
 import { AudioSection } from "@/components/audioSection";
 import VideoBackground from "@/components/videoBackground";
-import LeadFormModal from "@/components/lead_modal";
 import LeadForm from "@/components/lead_form";
+import Metadata from "./Metadata";
 
 export default function Home() {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
@@ -38,6 +36,15 @@ export default function Home() {
   );
 
   return (
+    <>
+    {/* Metadata component to update dynamic SEO for this page */}
+    <Metadata
+      title="AI Voice Agents & Chatbots that work 24/7 | DialWise.ai"
+      description="DialWise.ai is a leading provider of AI voice agents and chatbots. Our agents are trained to provide high-quality assistance and are available 24/7 to help businesses grow."
+      ogImage="/demo_dialwise.webp"
+      twitterImage="/demo_dialwise.webp"
+      keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
+    />
     <div ref={containerRef} className="relative">
       {/* Hero Section */}
       <section className="min-h-screen relative flex items-center justify-center overflow-hidden pt-32 md:pt-40 bg_pattern_top">
@@ -139,5 +146,6 @@ export default function Home() {
           <LeadForm isOpen={isLeadFormOpen} onClose={() => setIsLeadFormOpen(false)} />
         )}
     </div>
+    </>
   );
 }

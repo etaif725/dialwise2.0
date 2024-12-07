@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2, AlertCircle, Clock, Activity } from "lucide-react";
+import Metadata from "../Metadata";
 
 const systems = [
   {
@@ -50,6 +51,15 @@ const getStatusIcon = (status: string) => {
 
 export default function Status() {
   return (
+    <>
+    {/* Metadata component to update dynamic SEO for this page */}
+    <Metadata
+      title="Servers Status | DialWise.ai"
+      description="Check the status of our servers. DialWise.ai is a leading provider of AI voice agents and chatbots."
+      ogImage="/demo_dialwise.webp"
+      twitterImage="/demo_dialwise.webp"
+      keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
+    />
     <div className="min-h-screen pt-20 bg_pattern_top">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -130,5 +140,6 @@ export default function Status() {
         </div>
       </motion.div>
     </div>
+    </>
   );
 }

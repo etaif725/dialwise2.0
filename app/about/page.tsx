@@ -11,6 +11,7 @@ import { JourneySection } from "@/components/about/journey-section";
 import CalendarModal from "@/components/calendar-modal";
 import ChatModal from "@/components/chat-modal";
 import { useTheme } from "next-themes";
+import Metadata from "../Metadata";
 
 const team = [
   {
@@ -37,6 +38,15 @@ export default function About() {
     : "/team/esignature_cocosign.webp";
 
   return (
+    <>
+    {/* Metadata component to update dynamic SEO for this page */}
+    <Metadata
+      title="Our Vision and Goals for DialWise.ai | DialWise.ai"
+      description="We've been working super-hard to make AI voice agents and chatbots accessible to businesses of all sizes. Our mission is to revolutionize the way businesses communicate with customers."
+      ogImage="/demo_dialwise.webp"
+      twitterImage="/demo_dialwise.webp"
+      keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
+    />
     <div className="min-h-screen pt-20 bg_pattern_top">
       {/* Hero Section */}
       <section className="relative py-20">
@@ -189,5 +199,6 @@ export default function About() {
       <CalendarModal isOpen={isCalendarOpen} onClose={() => setIsCalendarOpen(false)} />
       <ChatModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </div>
+    </>
   );
 }

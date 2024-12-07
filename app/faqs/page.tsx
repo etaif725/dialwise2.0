@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/accordion";
 import { Card } from "@/components/ui/card";
 import { Bot, MessageSquare, Shield, Zap } from "lucide-react";
+import Metadata from "../Metadata";
 
 const faqs = [
   {
@@ -74,6 +75,15 @@ const features = [
 
 export default function FAQs() {
   return (
+    <>
+    {/* Metadata component to update dynamic SEO for this page */}
+    <Metadata
+      title="Frequently Asked Questions about DialWise.ai | DialWise.ai"
+      description="Here are some of the most frequently asked questions about DialWise.ai. We're here to help you get the most out of our AI Chatbots and AI Voice Agents."
+      ogImage="/demo_dialwise.webp"
+      twitterImage="/demo_dialwise.webp"
+      keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
+    />
     <div className="min-h-screen pt-20 bg_pattern_top">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -155,5 +165,6 @@ export default function FAQs() {
         </div>
       </motion.div>
     </div>
+    </>
   );
 }

@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import LeadForm from "@/components/lead_form";
+import Metadata from "../Metadata";
 
 // Dynamically import SplineAI for client-side rendering
 const SplineAI = dynamic(() => import("@/components/splineAI"), {
@@ -118,6 +119,15 @@ export default function GetStarted() {
   };
 
   return (
+    <>
+    {/* Metadata component to update dynamic SEO for this page */}
+    <Metadata
+      title="All you need to know about AI Voice Agents & Chatbots | DialWise.ai"
+      description="Book a free demo today and get started with DialWise.ai. Our advanced AI voice agents and chatbots deliver human-like interactions that drive business growth."
+      ogImage="/demo_dialwise.webp"
+      twitterImage="/demo_dialwise.webp"
+      keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
+    />
     <div className="min-h-screen pt-20 bg_pattern_top">
       <div className="container mx-auto px-4 pt-20">
       {/* Hero Section */}
@@ -222,5 +232,6 @@ export default function GetStarted() {
           <LeadForm isOpen={isLeadFormOpen} onClose={() => setIsLeadFormOpen(false)} />
         )}
     </div>
+    </>
   );
 }
