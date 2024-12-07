@@ -312,14 +312,14 @@ export default function AIAgents() {
                   >
                     Talk to AI Agent
                     <MessageSquare className="ml-2 h-5 w-5" />
-                  </Button> */}
+                  </Button>
                   <div
                     className="mx-auto bg-no-repeat mt-6"
                     style={{ backgroundImage: "url('/mobile-img-layout-p-1080.webp')", backgroundSize: "cover" }}
-                  >
-                    <div className="p-auto mx-auto">
-                          <form onSubmit={handleSubmit} className="py-24 px-12 space-y-4">
-                            {/* Logo */}
+                  > */}
+                    <div className="my-12 mx-auto">
+                          <form onSubmit={handleSubmit} className="space-y-4">
+                            {/* Logo 
                             <div className="relative justify-center flex items-center space-x-2 py-4">
                               <Image
                                 src={logoSrc}
@@ -329,7 +329,7 @@ export default function AIAgents() {
                                 className="object-contain"
                                 priority
                               />
-                            </div>
+                            </div> */}
                             <div>
                               <label className="block text-sm font-medium text-gray-700" htmlFor="firstName">
                                 First Name
@@ -414,7 +414,7 @@ export default function AIAgents() {
                           </form>
                     </div>
                   </div>
-                </div>
+                {/* </div> */}
             </Card>
           </motion.div>
         </AnimatePresence>
