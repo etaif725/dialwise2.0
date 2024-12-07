@@ -37,8 +37,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts", 
-    "public/js/dialwise-chatbot.js",
-    "public/js/fbevents.js"  ],
+    "public/js/fbevents.js"
+  ],
   "exclude": [
     "node_modules",
     ".next",
