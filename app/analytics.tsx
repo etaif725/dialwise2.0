@@ -5,6 +5,9 @@ import Script from 'next/script'
 export default function Analytics() {
   return (
     <>
+      {/* Favicon */}
+      <link rel="shortcut icon" href="/favicon.webp" />
+      
       {/* Square API via CDN */}
       <script
         type="text/javascript"
