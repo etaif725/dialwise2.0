@@ -314,11 +314,11 @@ export default function AIAgents() {
                     <MessageSquare className="ml-2 h-5 w-5" />
                   </Button> */}
                   <div
-                    className="mx-auto p-6 bg-no-repeat mt-8"
+                    className="mx-auto bg-no-repeat mt-6"
                     style={{ backgroundImage: "url('/mobile-img-layout-p-1080.webp')", backgroundSize: "cover" }}
                   >
-                    <div className="mt-6 p-12 mx-auto">
-                          <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="p-auto mx-auto">
+                          <form onSubmit={handleSubmit} className="py-24 px-12 space-y-4">
                             {/* Logo */}
                             <div className="relative justify-center flex items-center space-x-2 py-4">
                               <Image
