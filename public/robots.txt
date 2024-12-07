@@ -1,0 +1,46 @@
+# Block sensitive routes for all bots
+User-agent: *
+Disallow: /api/             # API routes
+Disallow: /_next/           # Next.js build files
+Disallow: /static/          # Static assets (if not public-facing)
+Disallow: /server/          # Server-related directories
+Disallow: /config/          # Configuration files
+Disallow: /env/             # Environment-specific files
+Disallow: /tmp/             # Temporary files
+Disallow: /node_modules/    # Node modules directory
+Disallow: /*.env$           # Environment files
+Disallow: /*.log$           # Log files
+Disallow: /404              # Custom 404 route
+Disallow: /500              # Custom 500 route
+Disallow: /preview/         # CMS preview routes
+
+# Explicitly allow Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Explicitly allow Bingbot
+User-agent: Bingbot
+Allow: /
+
+# Support for Yandex bot
+User-agent: Yandex
+Allow: /
+
+# Explicitly allow IndexNow crawlers
+User-agent: msnbot
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+
+# Block known bad bots
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+
+# Specify the location of the sitemap for indexing services
+Sitemap: https://dialwise.ai/sitemap.xml
