@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import Analytics from './analytics';
 import Metadata from './Metadata';
+import DialWiseChatbot from './DialWiseChatbot';
 
 export default function RootLayout({
   children,
@@ -26,14 +27,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
+        <DialWiseChatbot />
       </body>
     </html>
   );

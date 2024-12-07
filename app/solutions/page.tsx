@@ -384,8 +384,6 @@ export default function Solutions() {
     <Metadata
       title="Our Solutions for Entrepreneurs & Businesses of all Sizes | DialWise.ai"
       description="DialWise.ai solutions for businesses of all sizes: voice agents, chatbots, automations, and more. Get a free demo today."
-      ogImage="/demo_dialwise.webp"
-      twitterImage="/demo_dialwise.webp"
       keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
     />
     <div className="min-h-screen pt-20 bg_pattern_top">

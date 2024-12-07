@@ -80,8 +80,6 @@ export default function FAQs() {
     <Metadata
       title="Frequently Asked Questions about DialWise.ai | DialWise.ai"
       description="Here are some of the most frequently asked questions about DialWise.ai. We're here to help you get the most out of our AI Chatbots and AI Voice Agents."
-      ogImage="/demo_dialwise.webp"
-      twitterImage="/demo_dialwise.webp"
       keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
     />
     <div className="min-h-screen pt-20 bg_pattern_top">

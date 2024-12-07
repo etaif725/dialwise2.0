@@ -56,8 +56,6 @@ export default function Status() {
     <Metadata
       title="Servers Status | DialWise.ai"
       description="Check the status of our servers. DialWise.ai is a leading provider of AI voice agents and chatbots."
-      ogImage="/demo_dialwise.webp"
-      twitterImage="/demo_dialwise.webp"
       keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
     />
     <div className="min-h-screen pt-20 bg_pattern_top">

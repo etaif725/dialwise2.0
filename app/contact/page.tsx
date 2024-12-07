@@ -15,8 +15,6 @@ export default function Contact() {
     <Metadata
       title="Got Questions about AI Voice Agents & Chatbots? Click here | DialWise.ai"
       description="Get in touch with our team for any questions or support needs. DialWise.ai is a leading provider of AI voice agents and chatbots."
-      ogImage="/demo_dialwise.webp"
-      twitterImage="/demo_dialwise.webp"
       keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
     />
     <div className="min-h-screen pt-20 bg_pattern_top">

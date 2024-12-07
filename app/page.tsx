@@ -39,11 +39,24 @@ export default function Home() {
     <>
     {/* Metadata component to update dynamic SEO for this page */}
     <Metadata
-      title="AI Voice Agents & Chatbots that work 24/7 | DialWise.ai"
+      title="AI Voice Agents & Chatbots That Work 24/7 | DialWise.ai"
       description="DialWise.ai is a leading provider of AI voice agents and chatbots. Our agents are trained to provide high-quality assistance and are available 24/7 to help businesses grow."
-      ogImage="/demo_dialwise.webp"
-      twitterImage="/demo_dialwise.webp"
-      keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
+      keywords={[
+        'AI voice agents',
+        'conversational AI',
+        'customer service automation',
+        'AI chatbots',
+        'virtual assistants',
+        '24/7 customer support',
+        'natural language processing',
+        'voice AI',
+        'customer experience',
+        'business automation'
+      ]}
+      ogImage=
+      "https://dialwise.ai/demo_dialwise.webp"
+      twitterImage=
+      "https://dialwise.ai/demo_dialwise.webp"
     />
     <div ref={containerRef} className="relative">
       {/* Hero Section */}

@@ -43,8 +43,6 @@ export default function About() {
     <Metadata
       title="Our Vision and Goals for DialWise.ai | DialWise.ai"
       description="We've been working super-hard to make AI voice agents and chatbots accessible to businesses of all sizes. Our mission is to revolutionize the way businesses communicate with customers."
-      ogImage="/demo_dialwise.webp"
-      twitterImage="/demo_dialwise.webp"
       keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
     />
     <div className="min-h-screen pt-20 bg_pattern_top">

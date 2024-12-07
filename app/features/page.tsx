@@ -117,8 +117,6 @@ export default function Features() {
     <Metadata
       title="DialWise.ai Main Benefits & Features | DialWise.ai"
       description="DialWise.ai Main Benefits & Features: Transform your business communication with AI-powered solutions that save time, reduce costs, and improve customer satisfaction."
-      ogImage="/demo_dialwise.webp"
-      twitterImage="/demo_dialwise.webp"
       keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
     />
     <div className="min-h-screen pt-20 bg_pattern_top">

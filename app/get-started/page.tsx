@@ -124,8 +124,6 @@ export default function GetStarted() {
     <Metadata
       title="All you need to know about AI Voice Agents & Chatbots | DialWise.ai"
       description="Book a free demo today and get started with DialWise.ai. Our advanced AI voice agents and chatbots deliver human-like interactions that drive business growth."
-      ogImage="/demo_dialwise.webp"
-      twitterImage="/demo_dialwise.webp"
       keywords={['AI voice agents', 'customer service automation', 'AI chatbots']}
     />
     <div className="min-h-screen pt-20 bg_pattern_top">

@@ -31,7 +31,7 @@ const defaultMetadata = {
         url: 'https://dialwise.ai/demo_dialwise.webp',
         width: 1200,
         height: 630,
-        alt: 'DialWise.ai - AI Voice Agents & Chatbots',
+        alt: 'DialWise.ai - Revolutionary AI Voice Agents & Chatbots',
       },
     ],
   },
@@ -41,7 +41,7 @@ const defaultMetadata = {
     creator: '@dialwise',
     site: '@dialwise',
   },
-  canonical: '',
+  canonical: 'https://dialwise.ai',
   robots: {
     index: true,
     follow: true,
@@ -53,13 +53,8 @@ const defaultMetadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-site-verification',
-    yandex: 'your-yandex-verification',
-    yahoo: 'your-yahoo-verification',
-  },
   alternates: {
-    canonical: '',
+    canonical: 'https://dialwise.ai',
     languages: {
       'en-US': 'https://dialwise.ai',
     },
@@ -103,7 +98,7 @@ const Metadata: React.FC<MetadataProps> = ({
       const metaKeywords = document.querySelector('meta[name="keywords"]');
       if (metaKeywords) metaKeywords.setAttribute('content', keywords.join(', '));
     }
-  }, [title, description, canonical, keywords]);
+  }, [title, description, keywords, ogImage, twitterImage, canonical]);
 
   const schemaMarkup = {
     "@context": "https://schema.org",
