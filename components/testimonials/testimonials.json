@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Ravi Patel",
+    "role": "AppWorldz",
+    "rating": 5,
+    "image": "/agents/voice_img03.webp",
+    "content": "DialWise.ai's chatbots and AI implementation made our process incredibly easy. Their voice agents now handle all booking inquiries, saving our team countless hours every week. It's been a fantastic investment, and our customers love the responsiveness!"
+  },
+  {
+    "name": "Liz Batista",
+    "role": "SociaLabs",
+    "rating": 5,
+    "image": "/agents/voice_img02.webp",
+    "content": "As early adopters of DialWise.ai, their voice agents have been fantastic. They understand context perfectly and we've seen improved customer satisfaction since day one. Our team now focuses on strategic tasks instead of routine calls."
+  },
+  {
+    "name": "Olivia Anderson",
+    "role": "TechNova",
+    "rating": 5,
+    "image": "/agents/voice_img07.webp",
+    "content": "The AI voice agents from DialWise.ai have been a game changer for our company. They've streamlined our customer service operations and handled inquiries with remarkable accuracy. It's improved response times, and our customers are happier than ever!"
+  },
+  {
+    "name": "Ethan Clark",
+    "role": "CloudFusion",
+    "rating": 4,
+    "image": "/agents/voice_img01.webp",
+    "content": "Since implementing DialWise.ai, we've seen a major improvement in efficiency. The AI chatbot has been able to handle routine queries, leaving our team to focus on higher-level issues. It's been a great tool for our customer support team."
+  },
+  {
+    "name": "Sophia Lee",
+    "role": "EcomPro",
+    "rating": 5,
+    "image": "/agents/voice_img05.webp",
+    "content": "DialWise.ai's voice agents have brought a significant boost to our business. The system handles customer interactions seamlessly and has enhanced our ability to serve more clients without compromising on quality. It's a must-have for any growing company."
+  },
+  {
+    "name": "David Walker",
+    "role": "InnoTech Solutions",
+    "rating": 5,
+    "image": "/agents/voice_img04.webp",
+    "content": "We couldn't be more satisfied with the service from DialWise.ai. Their chatbot quickly handles customer requests and our team can now focus on strategic projects. The system is intelligent, easy to integrate, and consistently delivers results."
+  }
+]
