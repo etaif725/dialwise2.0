@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "What are the commission rates?",
-    answer: "We offer tiered commission rates: 20% for Standard Partners (up to $10,000 monthly sales), 25% for Premium Partners ($10,000-$50,000), and 30% for Elite Partners (above $50,000). Commissions are paid monthly via PayPal or bank transfer."
+    answer: "We offer tiered commission rates: 10% for Standard Partners (up to $10,000 monthly sales), 16.5% for Premium Partners ($10,000-$50,000), and 20% for Elite Partners (above $50,000). Commissions are paid monthly via PayPal or bank transfer."
   },
   {
     question: "What marketing materials do you provide?",
@@ -37,10 +37,6 @@ const faqs = [
     question: "Can I track my referrals and earnings?",
     answer: "Yes! You'll have access to a real-time dashboard showing your referrals, conversions, and earnings. You can track click-through rates, conversion rates, and commission earnings all in one place."
   },
-  {
-    question: "What kind of support do you provide?",
-    answer: "All affiliates receive access to our support team. Premium and Elite partners get priority support and a dedicated account manager. We also provide regular training sessions and updates on new features."
-  }
 ];
 
 const steps = [
