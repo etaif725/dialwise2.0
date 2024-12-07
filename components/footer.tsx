@@ -29,7 +29,6 @@ const sections = [
     title: "Resources",
     links: [
       { label: "Affiliate Program", href: "/partners/affiliate" },
-      { label: "Agency Program", href: "/partners/agency" },
       { label: "Documentation (soon)", href: "#" },
     ],
   },
