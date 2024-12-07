@@ -5,7 +5,7 @@ import { NextSeo } from 'next-seo';
 
 // Default metadata that can be overridden by pages
 const defaultMetadata = {
-  title: 'DialWise.ai - AI Voice Agents & Chatbots that work 24/7',
+  title: 'DialWise.ai - Revolutionary AI Voice Agents & Chatbots',
   description: 'Transform your customer service with DialWise.ai. Our advanced AI voice agents and chatbots provide 24/7 support, handle complex conversations, and deliver human-like interactions that drive business growth.',
   keywords: [
     'AI voice agents',
@@ -41,7 +41,7 @@ const defaultMetadata = {
     creator: '@dialwise',
     site: '@dialwise',
   },
-  canonical: 'https://dialwise.ai',
+  canonical: '',
   robots: {
     index: true,
     follow: true,
@@ -59,7 +59,7 @@ const defaultMetadata = {
     yahoo: 'your-yahoo-verification',
   },
   alternates: {
-    canonical: 'https://dialwise.ai',
+    canonical: '',
     languages: {
       'en-US': 'https://dialwise.ai',
     },
