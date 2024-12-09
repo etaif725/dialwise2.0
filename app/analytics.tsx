@@ -10,13 +10,6 @@ export default function Analytics() {
         async
       ></script>
 
-      {/* Server Status Page */}
-      <script
-        type="text/javascript"
-        src="https://status.dialwise.ai/embed/script.js"
-        async
-      ></script>
-
       {/* Google Tag Manager */}
       <Script
         id="google-tag-manager"
