@@ -13,7 +13,7 @@ export default function Analytics() {
       {/* Server Status Page */}
       <script
         type="text/javascript"
-        src="http://status.dialwise.ai/embed/script.js"
+        src="https://status.dialwise.ai/embed/script.js"
         async
       ></script>
 
