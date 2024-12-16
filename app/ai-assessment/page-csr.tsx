@@ -51,7 +51,7 @@ export default function DWwelcomeForm() {
       });
 
       if (response.ok) {
-        router.push("/calc/assessment/");
+        router.push("/ai-assessment/tool/");
       } else {
         throw new Error("Failed to submit form");
       }
