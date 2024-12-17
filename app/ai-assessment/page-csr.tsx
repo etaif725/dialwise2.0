@@ -289,6 +289,9 @@ export default function DWwelcomeForm() {
                   />
                 </div>
                 <div className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60">
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="phone">
+                    Phone
+                  </label>
                   <PhoneInput
                     country={"us"}
                     value={phone}
