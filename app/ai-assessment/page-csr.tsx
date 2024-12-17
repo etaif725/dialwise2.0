@@ -289,17 +289,24 @@ export default function DWwelcomeForm() {
                   />
                 </div>
                 <div className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60">
-                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="phone">
-                    Phone
+                  <label className="block text-sm font-medium text-gray-700" htmlFor="phone">
+                    Phone Number
                   </label>
                   <PhoneInput
-                    country={"us"}
+                    country={'us'}
                     value={phone}
                     onChange={(value) => setPhone(value)}
+                    inputClass="phone-input text-black dark:text-white"
+                    containerClass="phone-container"
+                    buttonClass="phone-button"
+                    dropdownClass="phone-dropdown"
+                    searchClass="phone-search"
+                    enableSearch={true}
+                    disableSearchIcon={true}
                     inputProps={{
-                      id: "phone",
+                      id: 'phone',
                       required: true,
-                      className: "w-full px-12 py-2 border rounded-md text-black dark:text-white",
+                      className: 'w-full px-12 py-2 border rounded-md text-black dark:text-white',
                     }}
                   />
                 </div>
