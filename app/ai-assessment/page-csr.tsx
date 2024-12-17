@@ -157,7 +157,7 @@ export default function DWwelcomeForm() {
       });
   
       if (response.ok) {
-        router.push("/ai-assessment/boarding/");
+        router.push("/thank-you");
       } else {
         throw new Error("Failed to submit form");
       }
