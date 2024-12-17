@@ -135,7 +135,7 @@ export default function AIAgents() {
     }
 
     try {
-      const webhookUrl = process.env.NEXT_PUBLIC_WEBHOOK_URL;
+      const webhookUrl = process.env.NEXT_PUBLIC_MAKE_LEAD_FORM_WEBHOOK;
       
       if (!webhookUrl) {
         console.error('Webhook URL is not defined');
