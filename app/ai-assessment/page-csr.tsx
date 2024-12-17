@@ -296,7 +296,7 @@ export default function DWwelcomeForm() {
                     inputProps={{
                       id: "phone",
                       required: true,
-                      className: "mt-4 w-full px-12 py-2 border rounded-md text-black dark:text-white",
+                      className: "w-full px-12 py-2 border rounded-md text-black dark:text-white",
                     }}
                   />
                 </div>
