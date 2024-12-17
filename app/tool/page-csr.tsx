@@ -257,7 +257,7 @@ export default function DWAssessmentTool({ userInfo }: AssessmentToolProps) {
       </div>
 
       <div className="text-center space-y-8 pt-12">
-        <div className="bg-white dark:bg-accent/20 hover:bg-yellow/10 transition-colors border border-green-200 dark:border-green-700 rounded-xl shadow-lg p-6">
+        <div className="bg-white dark:bg-accent/5 hover:bg-green-50 transition-colors border border-green-200 dark:border-green-700 rounded-xl shadow-lg p-6">
           <h2 className="text-2xl font-bold mb-2">
             Total Potential Annual Savings:
             <span className="ml-2 bg-gradient-to-r from-yellow to-green-500 bg-clip-text text-transparent">

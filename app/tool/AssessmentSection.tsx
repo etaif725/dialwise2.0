@@ -47,7 +47,7 @@ export default function AssessmentSection({
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
-      className="bg-white dark:bg-primary/10 rounded-xl shadow-lg p-6 border border-green-200 dark:border-green-700 transition-all ease-in-out duration-300"
+      className="bg-white dark:bg-primary/5 rounded-xl shadow-lg p-6 border border-green-200 dark:border-green-700 transition-all ease-in-out duration-300"
     >
       <div className="flex items-center space-x-3 mb-4">
         <Icon className="h-6 w-6 text-primary dark:text-primary-foreground" />
@@ -65,7 +65,7 @@ export default function AssessmentSection({
           min="0"
           value={value || ""} // Ensure the value is always a string, including empty string case
           onChange={(e) => onChange(id, e.target.value)} // Update the value in the parent component
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-100 focus:ring-2 focus:ring-primary dark:bg-black dark:text-white focus:ring-primary dark:focus:ring-primary-foreground transition-all"
+          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary dark:bg-black dark:text-white focus:ring-primary dark:focus:ring-primary-foreground transition-all"
         />
 
         {additionalInputs?.map((input) => (
@@ -78,7 +78,7 @@ export default function AssessmentSection({
               min="0"
               value={additionalValues?.[input.id] || ""} // Ensure it's a string or empty string
               onChange={(e) => onChange(input.id, e.target.value)} // Update additional value in the parent
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-100 focus:ring-2 focus:ring-primary dark:bg-black dark:text-white focus:ring-primary dark:focus:ring-primary-foreground transition-all"
+              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-primary dark:bg-black dark:text-white focus:ring-primary dark:focus:ring-primary-foreground transition-all"
             />
           </div>
         ))}
