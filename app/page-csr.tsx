@@ -13,8 +13,15 @@ import { Calendar, MessageSquare } from "lucide-react";
 import { AudioSection } from "@/components/audioSection";
 import VideoBackground from "@/components/videoBackground";
 import LeadForm from "@/components/lead_form";
+import { useRouter } from "next/navigation";
 
 export default function DWHomePage() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/tool');
+  };
+
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -76,9 +83,10 @@ export default function DWHomePage() {
                 <Calendar className="ml-2 h-5 w-5" />
               </Button>
               <Button 
+                type="button"
                 size="lg"
                 className="text-white hover:text-white gradient-button"
-                onClick={() => setIsLeadFormOpen(true)}
+                onClick={handleClick}
               >
                 Get Started
               </Button>
