@@ -204,11 +204,11 @@ export default function DWwelcomeForm() {
     <div className="min-h-screen py-40 bg_pattern_top flex flex-col items-center justify-center bg-gradient-to-b from-[--background] to-[--muted]">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-4xl">
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold my-4 gradient-text">
-            AI Value Assessment Form
+          <h1 className="text-4xl md:text-5xl font-bold my-4 p-4 gradient-text">
+            Let's Discuss Your AI Needs, Shall We?
           </h1>
           <p className="text-xl text-[--muted-foreground] mb-40">
-            Unlock the future of your business with AI-powered solutions
+            Unlock the future of your business with<br></br> DialWise's AI-powered solutions
           </p>
         </div>
 
