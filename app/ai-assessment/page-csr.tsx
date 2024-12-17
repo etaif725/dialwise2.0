@@ -76,6 +76,7 @@ export default function DWwelcomeForm() {
 
   // Company Info
   const [companyName, setCompanyName] = useState<string>('');
+  const [companyWebsite , setCompanyWebsite] = useState<string>('');
   const [industry, setIndustry] = useState<Industry>('');
   const [companySize, setCompanySize] = useState<CompanySize>('');
   
@@ -138,6 +139,7 @@ export default function DWwelcomeForm() {
           phone,
           industry: finalIndustry, // Use final value for 'industry'
           companyName,
+          companyWebsite,
           companySize,
           salesEmployeeReplacement,
           csEmployeeReplacement,
@@ -245,7 +247,7 @@ export default function DWwelcomeForm() {
               <h3 className="text-xl font-bold mb-4 text-[--foreground] pt-10">General Info:</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="firstName">
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="firstName">
                     First Name
                   </label>
                   <input
@@ -259,7 +261,7 @@ export default function DWwelcomeForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="lastName">
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="lastName">
                     Last Name
                   </label>
                   <input
@@ -273,7 +275,7 @@ export default function DWwelcomeForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="email">
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="email">
                     Email Address
                   </label>
                   <input
@@ -286,10 +288,7 @@ export default function DWwelcomeForm() {
                     required
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="phone">
-                    Phone Number
-                  </label>
+                <div className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60">
                   <PhoneInput
                     country={"us"}
                     value={phone}
@@ -297,7 +296,7 @@ export default function DWwelcomeForm() {
                     inputProps={{
                       id: "phone",
                       required: true,
-                      className: "w-full px-12 py-2 border rounded-md text-black dark:text-white",
+                      className: "mt-4 w-full px-12 py-2 border rounded-md text-black dark:text-white",
                     }}
                   />
                 </div>
@@ -309,7 +308,7 @@ export default function DWwelcomeForm() {
               <h3 className="text-xl font-bold mb-4 text-[--foreground] pt-10">Company Info:</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="companyName">
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="companyName">
                     Company Name
                   </label>
                   <input
@@ -324,7 +323,22 @@ export default function DWwelcomeForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="industry">
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="companyWebsite">
+                    Company Website
+                  </label>
+                  <input
+                    type="text"
+                    id="companyWebsite"
+                    value={companyWebsite}
+                    onChange={(e) => setCompanyWebsite(e.target.value)}
+                    className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
+                    placeholder="Enter your company website"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="industry">
                     Industry
                   </label>
                   <select
@@ -340,27 +354,82 @@ export default function DWwelcomeForm() {
                     className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
                     required
                   >
-                    <option value="" disabled>
-                      Select your industry
-                    </option>
-                    <option value="Technology">Technology</option>
-                    <option value="Healthcare">Healthcare</option>
-                    <option value="Finance">Finance</option>
-                    <option value="Retail">Retail</option>
-                    <option value="Education">Education</option>
-                    <option value="Real Estate">Real Estate</option>
-                    <option value="Manufacturing">Manufacturing</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Hospitality">Hospitality</option>
-                    <option value="Transportation">Transportation</option>
-                    <option value="Construction">Construction</option>
+                    <option value="" disabled>Select your industry</option>
+                    <option value="service_industries">Service Industries</option>
+                    <option value="real_estate">Real Estate</option>
+                    <option value="clinics">Clinics</option>
+                    <option value="spas">Spas</option>
+                    <option value="salons">Salons</option>
+                    <option value="enterprises">Enterprises</option>
+                    <option value="law_firms">Law Firms</option>
+                    <option value="solar_energy">Solar Energy</option>
+                    <option value="logistics">Logistics</option>
+                    <option value="marketing_agencies">Marketing Agencies</option>
+                    <option value="advertising_agencies">Advertising Agencies</option>
+                    <option value="digital_marketing">Digital Marketing</option>
+                    <option value="financial_services">Financial Services</option>
+                    <option value="insurance">Insurance</option>
+                    <option value="education_services">Education Services</option>
+                    <option value="medical_services">Medical Services</option>
+                    <option value="health_and_wellness">Health & Wellness</option>
+                    <option value="event_management">Event Management</option>
+                    <option value="travel_agencies">Travel Agencies</option>
+                    <option value="hospitality_services">Hospitality Services</option>
+                    <option value="tourism">Tourism</option>
+                    <option value="construction_services">Construction Services</option>
+                    <option value="real_estate_agents">Real Estate Agents</option>
+                    <option value="property_management">Property Management</option>
+                    <option value="automotive_services">Automotive Services</option>
+                    <option value="home_services">Home Services</option>
+                    <option value="cleaning_services">Cleaning Services</option>
+                    <option value="personal_training">Personal Training</option>
+                    <option value="coaching_services">Coaching Services</option>
+                    <option value="consulting_services">Consulting Services</option>
+                    <option value="it_services">IT Services</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="software_development">Software Development</option>
+                    <option value="web_design">Web Design</option>
+                    <option value="app_development">App Development</option>
+                    <option value="business_services">Business Services</option>
+                    <option value="transportation_services">Transportation Services</option>
+                    <option value="retail_services">Retail Services</option>
+                    <option value="ecommerce">E-commerce</option>
+                    <option value="financial_advisors">Financial Advisors</option>
+                    <option value="accounting_services">Accounting Services</option>
+                    <option value="tax_services">Tax Services</option>
+                    <option value="marketing_services">Marketing Services</option>
+                    <option value="branding_services">Branding Services</option>
+                    <option value="public_relations">Public Relations</option>
+                    <option value="customer_support">Customer Support</option>
+                    <option value="virtual_assistants">Virtual Assistants</option>
+                    <option value="photography_services">Photography Services</option>
+                    <option value="videography_services">Videography Services</option>
+                    <option value="graphic_design">Graphic Design</option>
+                    <option value="copywriting">Copywriting</option>
+                    <option value="translation_services">Translation Services</option>
+                    <option value="it_support">IT Support</option>
+                    <option value="cleaning_services">Cleaning Services</option>
+                    <option value="real_estate_development">Real Estate Development</option>
+                    <option value="home_improvement">Home Improvement</option>
+                    <option value="pool_services">Pool Services</option>
+                    <option value="pest_control">Pest Control</option>
+                    <option value="security_services">Security Services</option>
+                    <option value="hr_services">HR Services</option>
+                    <option value="staffing_agencies">Staffing Agencies</option>
+                    <option value="engineering_services">Engineering Services</option>
+                    <option value="architecture_services">Architecture Services</option>
+                    <option value="graphic_design">Graphic Design</option>
+                    <option value="photography_services">Photography Services</option>
+                    <option value="videography_services">Videography Services</option>
+                    <option value="business_coaching">Business Coaching</option>
+                    <option value="professional_services">Professional Services</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>
 
                 {showOtherIndustry && (
                   <div>
-                    <label className="block text-sm font-medium text-gray-700" htmlFor="otherIndustry">
+                    <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="otherIndustry">
                       Please specify your industry
                     </label>
                     <input
@@ -374,7 +443,7 @@ export default function DWwelcomeForm() {
                   </div>
                 )}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="companySize">
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="companySize">
                     Company Size
                   </label>
                   <select
@@ -392,21 +461,85 @@ export default function DWwelcomeForm() {
                     <option value="" disabled>
                       Select your company size
                     </option>
-                    <option value="Small">Small (1-50 employees)</option>
-                    <option value="Medium">Medium (51-200 employees)</option>
-                    <option value="Large">Large (200+ employees)</option>
+                    <option value="Small (1-50 employees)">Small (1-50 employees)</option>
+                    <option value="Medium (51-200 employees)">Medium (51-200 employees)</option>
+                    <option value="Large (200+ employees)">Large (200+ employees)</option>
                   </select>
                 </div>
+
+                <div>
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="crmSystem">
+                    Do you have a CRM system?
+                  </label>
+                  <select
+                    id="crmSystem"
+                    value={crmSystem}
+                    onChange={(e) => {
+                      const selectedValue = e.target.value;
+                      if (isCRMSystem(selectedValue)) {
+                        setCrmSystem(selectedValue);
+                      }
+                    }}
+                    className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
+                    required
+                  >
+                    <option value="">Select CRM</option>
+                    <option value="HubSpot">HubSpot</option>
+                    <option value="Salesforce">Salesforce</option>
+                    <option value="GoHighLevel">GoHighLevel</option>
+                    <option value="Jobber">Jobber</option>
+                    <option value="Bitrix24">Bitrix24</option>
+                    <option value="Zoho">Zoho</option>
+                    <option value="Close">Close</option>
+                    <option value="Pipedrive">Pipedrive</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                {crmSystem === "Other" && (
+                  <div>
+                    <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="otherCrm">
+                      Please specify your CRM system
+                    </label>
+                    <input
+                      type="text"
+                      id="otherCrm"
+                      value={otherCrm}
+                      onChange={(e) => setOtherCrm(e.target.value)}
+                      className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
+                      placeholder="Enter the CRM system"
+                    />
+                  </div>
+                )}
+                <div>
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="aiBudget">
+                    What is your budget for this project? (in USD)
+                  </label>
+                  <select
+                    id="aiBudget"
+                    value={aiBudget}
+                    onChange={(e) => setAiBudget(e.target.value)}
+                    className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
+                    required
+                  >
+                    <option value="">Click to select</option>
+                    <option value="under $5000">under $5,000</option>
+                    <option value="$5000-$15000">$5,000-$15,000</option>
+                    <option value="$15000-$50000">$15,000-$50,000</option>
+                    <option value="$50000+">$50,000 or more</option>
+                  </select>
+                </div>
+
               </div>
             </div>
 
             {/* Custom Solutions Section */}
             <div>
-              <h3 className="text-xl font-bold mb-4 text-[--foreground] pt-10">Custom AI Solutions:</h3>
+              <h3 className="text-xl font-bold mb-4 text-[--foreground] pt-10">Potential AI Usage:</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="salesEmployeeReplacement">
-                    Sales Employee Replacement
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="salesEmployeeReplacement">
+                    How many sales agents do you currently hire?
                   </label>
                   <input
                     type="number"
@@ -414,13 +547,13 @@ export default function DWwelcomeForm() {
                     value={salesEmployeeReplacement}
                     onChange={(e) => setSalesEmployeeReplacement(e.target.value)}
                     className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
-                    placeholder="Number of Sales employees to be replaced"
+                    placeholder="Enter the number of employees here"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="csEmployeeReplacement">
-                    CS Employee Replacement
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="csEmployeeReplacement">
+                    How many customer service agents do you currently hire?
                   </label>
                   <input
                     type="number"
@@ -428,13 +561,13 @@ export default function DWwelcomeForm() {
                     value={csEmployeeReplacement}
                     onChange={(e) => setCsEmployeeReplacement(e.target.value)}
                     className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
-                    placeholder="Number of CS employees to be replaced"
+                    placeholder="Enter the number of employees here"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="outboundLeads">
-                    Outbound Leads Generated
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="outboundLeads">
+                    What is the average amount of leads you're trying to call each month?
                   </label>
                   <input
                     type="number"
@@ -447,8 +580,8 @@ export default function DWwelcomeForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="inboundLeads">
-                    Inbound Leads Generated
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="inboundLeads">
+                    What is the average amount of monthly incoming calls (Sales/Customer Service calls)
                   </label>
                   <input
                     type="number"
@@ -461,8 +594,8 @@ export default function DWwelcomeForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="smsEmailsSent">
-                    SMS/Emails Sent
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="smsEmailsSent">
+                    How many Emails do you normally send each month?
                   </label>
                   <input
                     type="number"
@@ -475,8 +608,8 @@ export default function DWwelcomeForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="socialMediaChatVisitors">
-                    Social Media/Chat Visitors
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="socialMediaChatVisitors">
+                    What is the average amount of Website/Social Media interactions you get each month?
                   </label>
                   <input
                     type="number"
@@ -489,8 +622,8 @@ export default function DWwelcomeForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="avgActiveTalkTime">
-                    Average Active Talk Time (minutes)
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="avgActiveTalkTime">
+                    What is the average talk-time of your BEST sales agent each month? (total in minutes)
                   </label>
                   <input
                     type="number"
@@ -506,10 +639,10 @@ export default function DWwelcomeForm() {
 
             {/* AI Solutions Section */}
             <div>
-              <h3 className="text-xl font-bold mb-4 text-[--foreground] pt-10">AI Solutions Needed:</h3>
+              <h3 className="text-xl font-bold mb-4 text-[--foreground] pt-10">Choose Your AI Agents:</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="selectedAIAgents">
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="selectedAIAgents">
                     Select AI Agents
                   </label>
                   <div className="space-y-2">
@@ -535,7 +668,7 @@ export default function DWwelcomeForm() {
                   </div>
                 </div>
 
-                <div>
+                {/* <div>
                   <label className="block text-sm font-medium text-gray-700" htmlFor="agentsRequired">
                     Agents Required Per Month (number)
                   </label>
@@ -556,76 +689,17 @@ export default function DWwelcomeForm() {
                       </div>
                     ))}
                   </div>
-                </div>
-
+                </div> */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="aiBudget">
-                    Budget for AI Solutions (in USD)
-                  </label>
-                  <input
-                    type="number"
-                    id="aiBudget"
-                    value={aiBudget}
-                    onChange={(e) => setAiBudget(e.target.value)}
-                    className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
-                    placeholder="Enter your estimated budget"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="crmSystem">
-                    Do you have a CRM system?
-                  </label>
-                  <select
-                    id="crmSystem"
-                    value={crmSystem}
-                    onChange={(e) => {
-                      const selectedValue = e.target.value;
-                      if (isCRMSystem(selectedValue)) {
-                        setCrmSystem(selectedValue);
-                      }
-                    }}
-                    className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
-                    required
-                  >
-                    <option value="">Select CRM</option>
-                    <option value="HubSpot">HubSpot</option>
-                    <option value="Salesforce">Salesforce</option>
-                    <option value="Zoho">GoHighLevel</option>
-                    <option value="Zoho">Jobber</option>
-                    <option value="Zoho">Bitrix24</option>
-                    <option value="Zoho">Zoho</option>
-                    <option value="Zoho">Close</option>
-                    <option value="Pipedrive">Pipedrive</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                {crmSystem === "Other" && (
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700" htmlFor="otherCrm">
-                      Please specify your CRM system
-                    </label>
-                    <input
-                      type="text"
-                      id="otherCrm"
-                      value={otherCrm}
-                      onChange={(e) => setOtherCrm(e.target.value)}
-                      className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
-                      placeholder="Enter the CRM system"
-                    />
-                  </div>
-                )}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="customApis">
-                    Custom APIs or Integration Requirements
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="customApis">
+                    Tell us about your business and where it hurts the most
                   </label>
                   <textarea
                     id="customApis"
                     value={customApis}
                     onChange={(e) => setCustomApis(e.target.value)}
                     className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
-                    placeholder="Any custom APIs or integrations required?"
+                    placeholder="Please tell us everything you can about your business, current pain points, and if there are any tasks you'd like us to fully automate for you."
                   />
                 </div>
               </div>
