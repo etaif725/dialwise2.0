@@ -288,8 +288,8 @@ export default function DWwelcomeForm() {
                     required
                   />
                 </div>
-                <div className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60">
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="phone">
+                <div>
+                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="phone">
                     Phone Number
                   </label>
                   <PhoneInput
