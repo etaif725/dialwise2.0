@@ -21,7 +21,7 @@ const milestones = [
     year: "2024",
     icon: Rocket,
     title: "Innovation Leap",
-    description: "Launched advanced AI capabilities and expanded language support to 25+ languages."
+    description: "Launched advanced AI capabilities and expanded language support to 29 languages."
   },
   {
     year: "2025",

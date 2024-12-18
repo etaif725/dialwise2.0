@@ -7,23 +7,27 @@ import {
 } from "@/components/ui/dialog";
 import MyCalInline from "./MyCalInline";
 
-interface CalendarModalProps {
+interface ClientBoardingModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export default function CalendarModal({ isOpen, onClose }: CalendarModalProps) {
+export default function ClientBoardingModal({ isOpen, onClose }: ClientBoardingModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle>Schedule a Demo</DialogTitle>
+          <DialogTitle>Let's Discuss Your Needs</DialogTitle>
           <DialogDescription>
-            Choose a convenient time for your personalized demo.
+            Fill in this form and our team will be able to custom tailor our AI Solutions for your business and niche.
           </DialogDescription>
         </DialogHeader>
         <div className="h-[600px] w-full">
-          <MyCalInline />
+          <div>
+            <form>
+              
+            </form>
+          </div>
         </div>
       </DialogContent>
     </Dialog>

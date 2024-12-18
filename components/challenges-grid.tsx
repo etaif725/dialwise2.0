@@ -22,7 +22,7 @@ const challenges = [
   },
   {
     problem: "Language barriers limiting market reach",
-    solution: "Multilingual support in 25+ languages",
+    solution: "Multilingual support in 29 languages",
     impact: "Expand into new markets confidently"
   },
   {

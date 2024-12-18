@@ -37,7 +37,7 @@ const advantages = [
   },
   {
     title: "Break language barriers",
-    description: "Our AI has the ability to support 25+ languages. Offer a stellar customer experience with seamless and linguistic flexibility.",
+    description: "Our AI has the ability to support 29 languages. Offer a stellar customer experience with seamless and linguistic flexibility.",
     icon: Languages,
   },
   {
