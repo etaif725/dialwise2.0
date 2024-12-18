@@ -37,6 +37,10 @@ const faqs = [
     question: "Can I track my referrals and earnings?",
     answer: "Yes! You'll have access to a real-time dashboard showing your referrals, conversions, and earnings. You can track click-through rates, conversion rates, and commission earnings all in one place."
   },
+  {
+    question: "What kind of support do you provide?",
+    answer: "All affiliates receive access to our support team. Premium and Elite partners get priority support and a dedicated account manager. We also provide regular training sessions and updates on new features."
+  }
 ];
 
 const steps = [
@@ -57,7 +61,7 @@ const steps = [
   },
   {
     title: "Step 3: Start Earning",
-    description: "Share your link and earn up to 30% commission.",
+    description: "Share your link and earn up to 20% commission for each referral we board.",
     icon: Trophy,
     action: "Get Started",
     type: "lead",
@@ -68,7 +72,7 @@ const benefits = [
   {
     icon: <DollarSign className="h-8 w-8" />,
     title: "High Commission Rates",
-    description: "Earn up to 30% on all referred sales with lifetime value.",
+    description: "Earn up to 20% on all referred sales with lifetime value.",
   },
   {
     icon: <Clock className="h-8 w-8" />,

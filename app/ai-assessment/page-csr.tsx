@@ -27,12 +27,12 @@ type CRMSystem =
   | '';
 
 type CompanySize = 
-  | 'Small' 
-  | 'Medium' 
-  | 'Large' 
+  | 'Small (1-50 employees)' 
+  | 'Medium (51-200 employees)' 
+  | 'Large (200+ employees)' 
   | '';
 
-type Industry = 
+  type Industry = 
   | 'Technology'
   | 'Healthcare'
   | 'Finance'
@@ -44,6 +44,50 @@ type Industry =
   | 'Hospitality'
   | 'Transportation'
   | 'Construction'
+  | 'clinics'
+  | 'spas'
+  | 'salons'
+  | 'enterprises'
+  | 'law_firms'
+  | 'solar_energy'
+  | 'logistics'
+  | 'advertising_agencies'
+  | 'insurance'
+  | 'education_services'
+  | 'medical_services'
+  | 'health_and_wellness'
+  | 'event_management'
+  | 'travel_agencies'
+  | 'hospitality_services'
+  | 'tourism'
+  | 'construction_services'
+  | 'real_estate_agents'
+  | 'property_management'
+  | 'automotive_services'
+  | 'home_services'
+  | 'cleaning_services'
+  | 'personal_training'
+  | 'coaching_services'
+  | 'consulting_services'
+  | 'business_services'
+  | 'transportation_services'
+  | 'retail_services'
+  | 'ecommerce'
+  | 'financial_advisors'
+  | 'accounting_services'
+  | 'tax_services'
+  | 'marketing_services'
+  | 'customer_support'
+  | 'virtual_assistants'
+  | 'translation_services'
+  | 'it_support'
+  | 'real_estate_development'
+  | 'home_improvement'
+  | 'pool_services'
+  | 'pest_control'
+  | 'security_services'
+  | 'hr_services'
+  | 'staffing_agencies'
   | 'Other'
   | '';
 
@@ -111,7 +155,7 @@ export default function DWwelcomeForm() {
   
     const finalIndustry = industry === "Other" ? otherIndustry : industry;
   
-    if (!firstName || !lastName || !email || !phone || !finalIndustry || !companyName || !companySize) {
+    if (!firstName || !lastName || !email || !phone || !finalIndustry || !companyName || !companySize || !companyWebsite || !aiBudget) {
       setError("All fields are required.");
       setIsLoading(false);
       return;
@@ -159,7 +203,7 @@ export default function DWwelcomeForm() {
       });
   
       if (response.ok) {
-        router.push("/thank-you");
+        router.push("/ai-agent-demo");
       } else {
         throw new Error("Failed to submit form");
       }
@@ -183,15 +227,69 @@ export default function DWwelcomeForm() {
 
   function isIndustry(value: string): value is Industry {
     const validIndustries: Industry[] = [
-      'Technology', 'Healthcare', 'Finance', 'Retail', 'Education', 
-      'Real Estate', 'Manufacturing', 'Entertainment', 'Hospitality', 
-      'Transportation', 'Construction', 'Other', ''
+        'Technology',
+        'Healthcare',
+        'Finance',
+        'Retail',
+        'Education',
+        'Real Estate',
+        'Manufacturing',
+        'Entertainment',
+        'Hospitality',
+        'Transportation',
+        'Construction',
+        'clinics',
+        'spas',
+        'salons',
+        'enterprises',
+        'law_firms',
+        'solar_energy',
+        'logistics',
+        'advertising_agencies',
+        'insurance',
+        'education_services',
+        'medical_services',
+        'health_and_wellness',
+        'event_management',
+        'travel_agencies',
+        'hospitality_services',
+        'tourism',
+        'construction_services',
+        'real_estate_agents',
+        'property_management',
+        'automotive_services',
+        'home_services',
+        'cleaning_services',
+        'personal_training',
+        'coaching_services',
+        'consulting_services',
+        'business_services',
+        'transportation_services',
+        'retail_services',
+        'ecommerce',
+        'financial_advisors',
+        'accounting_services',
+        'tax_services',
+        'marketing_services',
+        'customer_support',
+        'virtual_assistants',
+        'translation_services',
+        'it_support',
+        'real_estate_development',
+        'home_improvement',
+        'pool_services',
+        'pest_control',
+        'security_services',
+        'hr_services',
+        'staffing_agencies',
+        'Other',
+        ''
     ];
     return validIndustries.includes(value as Industry);
-  }
+}
   
   function isCompanySize(value: string): value is CompanySize {
-    return ['Small', 'Medium', 'Large', ''].includes(value);
+    return ['Small (1-50 employees)', 'Medium (51-200 employees)', 'Large (200+ employees)', ''].includes(value);
   }
   
   function isCRMSystem(value: string): value is CRMSystem {
@@ -205,21 +303,17 @@ export default function DWwelcomeForm() {
     <>
     <div className="min-h-screen py-40 bg_pattern_top flex flex-col items-center justify-center bg-gradient-to-b from-[--background] to-[--muted]">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-4xl">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold my-4 p-4 gradient-text">
-            Let's Discuss Your AI Needs, Shall We?
-          </h1>
-          <p className="text-xl text-[--muted-foreground] mb-40">
-            Unlock the future of your business with<br></br> DialWise's AI-powered solutions
+        <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-10 px-4">
+              Get Your <span className="gradient-text">FREE AI Assessment</span> Today.
+            </h1>
+          <p className="text-lg text-[--muted-foreground] px-4">
+            Discover how AI can revolutionize your business. Our cutting-edge AI Value Assessment Tool analyzes your
+            business needs and recommends tailored AI solutions to boost efficiency, customer satisfaction, and revenue.
           </p>
         </div>
 
         <div className="bg-[--card] rounded-2xl shadow-xl p-8">
-          <h2 className="text-2xl font-bold mb-4 text-[--foreground]">Get Your Free AI Audit</h2>
-          <p className="text-[--muted-foreground] mb-6">
-            Discover how AI can revolutionize your business. Our cutting-edge AI Value Assessment Tool analyzes your
-            business needs and recommends tailored AI solutions to boost efficiency, customer satisfaction, and revenue.
-          </p>
           <div className="grid md:grid-cols-3 gap-8 my-10">
           {features.map((feature, index) => (
             <motion.div
@@ -288,25 +382,15 @@ export default function DWwelcomeForm() {
                     required
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="phone">
-                    Phone Number
-                  </label>
+                <div className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60">
                   <PhoneInput
-                    country={'us'}
+                    country={"us"}
                     value={phone}
                     onChange={(value) => setPhone(value)}
-                    inputClass="phone-input text-black dark:text-white"
-                    containerClass="phone-container"
-                    buttonClass="phone-button"
-                    dropdownClass="phone-dropdown"
-                    searchClass="phone-search"
-                    enableSearch={true}
-                    disableSearchIcon={true}
                     inputProps={{
-                      id: 'phone',
+                      id: "phone",
                       required: true,
-                      className: 'w-full px-12 py-2 border rounded-md text-black dark:text-white',
+                      className: "mt-4 w-full px-12 py-2 border rounded-md text-black dark:text-white",
                     }}
                   />
                 </div>
@@ -365,8 +449,6 @@ export default function DWwelcomeForm() {
                     required
                   >
                     <option value="" disabled>Select your industry</option>
-                    <option value="service_industries">Service Industries</option>
-                    <option value="real_estate">Real Estate</option>
                     <option value="clinics">Clinics</option>
                     <option value="spas">Spas</option>
                     <option value="salons">Salons</option>
@@ -374,10 +456,7 @@ export default function DWwelcomeForm() {
                     <option value="law_firms">Law Firms</option>
                     <option value="solar_energy">Solar Energy</option>
                     <option value="logistics">Logistics</option>
-                    <option value="marketing_agencies">Marketing Agencies</option>
                     <option value="advertising_agencies">Advertising Agencies</option>
-                    <option value="digital_marketing">Digital Marketing</option>
-                    <option value="financial_services">Financial Services</option>
                     <option value="insurance">Insurance</option>
                     <option value="education_services">Education Services</option>
                     <option value="medical_services">Medical Services</option>
@@ -395,11 +474,6 @@ export default function DWwelcomeForm() {
                     <option value="personal_training">Personal Training</option>
                     <option value="coaching_services">Coaching Services</option>
                     <option value="consulting_services">Consulting Services</option>
-                    <option value="it_services">IT Services</option>
-                    <option value="cybersecurity">Cybersecurity</option>
-                    <option value="software_development">Software Development</option>
-                    <option value="web_design">Web Design</option>
-                    <option value="app_development">App Development</option>
                     <option value="business_services">Business Services</option>
                     <option value="transportation_services">Transportation Services</option>
                     <option value="retail_services">Retail Services</option>
@@ -407,15 +481,9 @@ export default function DWwelcomeForm() {
                     <option value="financial_advisors">Financial Advisors</option>
                     <option value="accounting_services">Accounting Services</option>
                     <option value="tax_services">Tax Services</option>
-                    <option value="marketing_services">Marketing Services</option>
-                    <option value="branding_services">Branding Services</option>
-                    <option value="public_relations">Public Relations</option>
+                    <option value="marketing_services">Digital Marketing Agencies</option>
                     <option value="customer_support">Customer Support</option>
                     <option value="virtual_assistants">Virtual Assistants</option>
-                    <option value="photography_services">Photography Services</option>
-                    <option value="videography_services">Videography Services</option>
-                    <option value="graphic_design">Graphic Design</option>
-                    <option value="copywriting">Copywriting</option>
                     <option value="translation_services">Translation Services</option>
                     <option value="it_support">IT Support</option>
                     <option value="cleaning_services">Cleaning Services</option>
@@ -426,13 +494,6 @@ export default function DWwelcomeForm() {
                     <option value="security_services">Security Services</option>
                     <option value="hr_services">HR Services</option>
                     <option value="staffing_agencies">Staffing Agencies</option>
-                    <option value="engineering_services">Engineering Services</option>
-                    <option value="architecture_services">Architecture Services</option>
-                    <option value="graphic_design">Graphic Design</option>
-                    <option value="photography_services">Photography Services</option>
-                    <option value="videography_services">Videography Services</option>
-                    <option value="business_coaching">Business Coaching</option>
-                    <option value="professional_services">Professional Services</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>
@@ -677,29 +738,6 @@ export default function DWwelcomeForm() {
                     ))}
                   </div>
                 </div>
-
-                {/* <div>
-                  <label className="block text-sm font-medium text-gray-700" htmlFor="agentsRequired">
-                    Agents Required Per Month (number)
-                  </label>
-                  <div className="space-y-2">
-                    {[
-                      'Sales AI Assistant',
-                      'Customer Service AI',
-                      'Social Media AI'
-                    ].map((agent) => (
-                      <div key={agent}>
-                        <input
-                          type="number"
-                          placeholder={`No. of ${agent}`}
-                          value={agentsRequired[agent] || ''}
-                          onChange={(e) => handleAgentsRequiredChange(agent, e.target.value)}
-                          className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div> */}
                 <div>
                   <label className="block text-sm font-medium pt-4 pb-2 text-black dark:text-white/60" htmlFor="customApis">
                     Tell us about your business and where it hurts the most
@@ -708,7 +746,7 @@ export default function DWwelcomeForm() {
                     id="customApis"
                     value={customApis}
                     onChange={(e) => setCustomApis(e.target.value)}
-                    className="mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
+                    className="h-[500px] mt-2 block w-full px-4 py-2 border rounded-md text-black dark:text-white"
                     placeholder="Please tell us everything you can about your business, current pain points, and if there are any tasks you'd like us to fully automate for you."
                   />
                 </div>
@@ -723,7 +761,7 @@ export default function DWwelcomeForm() {
                 className="my-4 px-8 py-4 rounded-lg bg-gradient-to-r from-yellow to-green-500 text-black font-bold hover:shadow-lg hover:scale-105 transition-all duration-200 w-full"
                 disabled={isLoading}
               >
-                {isLoading ? "Submitting Your Request..." : "Send Me a Proposal"}
+                {isLoading ? "Submitting Your Inputs..." : "I'm Done, Let's Create My 1st Agent"}
               </button>
             </div>
           </form>

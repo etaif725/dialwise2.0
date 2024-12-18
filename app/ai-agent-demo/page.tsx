@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import DWAssessmentTool from "./page-csr";
+import DWAgentDemoBuilder from "./page-csr";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://dialwise.ai'),
   title: {
-    default: 'Get Your AI Assessment Report | DialWise.ai',
+    default: 'Contact DialWise | DialWise.ai',
     template: '%s | DialWise.ai',
   },
   description:
@@ -71,15 +71,6 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-      <div className="px-6">
-        <DWAssessmentTool userInfo={{
-        customerService: "",
-        virtualReceptionist: "",
-        appointmentSetter: "",
-        onboarding: "",
-        onboardingSalary: "",
-        workflow: ""
-      }} />
-      </div>
+    <DWAgentDemoBuilder />
   );
 }
