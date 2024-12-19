@@ -158,7 +158,7 @@ export default function AIAgents() {
         lastName,
         email,
         phone,
-        agentType: selectedAgentType,
+        agentType: selectedAgent,
         timestamp: new Date().toISOString(),
       };
   
