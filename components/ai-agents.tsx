@@ -136,41 +136,47 @@ export default function AIAgents() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
+  
     // Validate form fields
     if (!firstName || !lastName || !email || !phone) {
+      alert("Please fill in all required fields.");
       setIsLoading(false);
       return;
     }
-
+  
     try {
       const webhookUrl = process.env.NEXT_PUBLIC_MAKE_LEAD_FORM_WEBHOOK;
-      
+  
       if (!webhookUrl) {
-        console.error('Webhook URL is not defined');
+        console.error("Webhook URL is not defined");
+        setIsLoading(false);
         return;
       }
-
+  
+      const payload = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        agentType: selectedAgentType,
+        timestamp: new Date().toISOString(),
+      };
+  
       const response = await fetch(webhookUrl, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          email,
-          phone,
-          agentType: selectedAgentType,
-          timestamp: new Date().toISOString(),
-        }),
+        body: JSON.stringify(payload),
       });
-
+  
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        throw new Error("Failed to submit form");
       }
+  
+      alert("Form submitted successfully!");
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
     } finally {
       setIsLoading(false);
     }
@@ -233,6 +239,7 @@ export default function AIAgents() {
                 selectedAgent === key ? 'gradient-button text-white hover:text-white hover:text-semibold' : ''
               }`}
               onClick={() => {
+                setSelectedAgent(key);
                 setSelectedAgentType(agent.agentType)
               }}
             >
