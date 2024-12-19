@@ -22,7 +22,8 @@ const agents = {
     audio: "/audio/real-estate-demo.mp3",
     features: ["Property Inquiries", "Lead Qualification", "Appointment Setting", "Market Updates", "24/7 Support"],
     description: "Handles property inquiries, qualifies leads, and schedules viewings automatically.",
-    benefits: "Never miss a potential buyer or seller. Our AI agents handle inquiries 24/7, qualify leads, and schedule viewings automatically."
+    benefits: "Never miss a potential buyer or seller. Our AI agents handle inquiries 24/7, qualify leads, and schedule viewings automatically.",
+    agentType: "Real Estate"
   },
   "solar": {
     title: "Solar Sales AI Agent",
@@ -30,7 +31,8 @@ const agents = {
     audio: "/audio/solar-demo.mp3",
     features: ["Energy Assessments", "Cost Savings Calc", "Installation Info", "Rebate Details", "Follow-ups"],
     description: "Educates prospects about solar benefits and handles consultation scheduling.",
-    benefits: "Convert more solar leads with intelligent qualification and automated energy savings calculations."
+    benefits: "Convert more solar leads with intelligent qualification and automated energy savings calculations.",
+    agentType: "Solar"
   },
   "hvac": {
     title: "HVAC Service AI Agent",
@@ -38,7 +40,8 @@ const agents = {
     audio: "/audio/hvac-demo.mp3",
     features: ["Emergency Service", "Maintenance Scheduling", "Quote Generation", "Parts Inventory", "Follow-ups"],
     description: "Manages service requests and maintenance scheduling efficiently.",
-    benefits: "Handle emergency calls and routine maintenance scheduling automatically, improving response times and customer satisfaction."
+    benefits: "Handle emergency calls and routine maintenance scheduling automatically, improving response times and customer satisfaction.",
+    agentType: "HVAC"
   },
   "moving": {
     title: "Moving & Logistics AI Agent",
@@ -46,7 +49,8 @@ const agents = {
     audio: "/audio/moving-demo.mp3",
     features: ["Quote Requests", "Inventory Management", "Schedule Coordination", "Status Updates", "Claims Processing"],
     description: "Streamlines moving quote requests and logistics coordination.",
-    benefits: "Automate the moving quote process and coordinate logistics efficiently while keeping customers informed."
+    benefits: "Automate the moving quote process and coordinate logistics efficiently while keeping customers informed.",
+    agentType: "Moving"
   },
   "finance": {
     title: "Finance & Credit AI Agent",
@@ -54,7 +58,8 @@ const agents = {
     audio: "/audio/finance-demo.mp3",
     features: ["Credit Analysis", "Loan Processing", "Document Collection", "Payment Plans", "Compliance"],
     description: "Handles financial inquiries and loan processing efficiently.",
-    benefits: "Streamline financial processes while maintaining compliance and customer satisfaction."
+    benefits: "Streamline financial processes while maintaining compliance and customer satisfaction.",
+    agentType: "Credit Repair"
   },
   "support": {
     title: "Tech Support AI Agent",
@@ -62,7 +67,8 @@ const agents = {
     audio: "/audio/tech-demo.mp3",
     features: ["Issue Diagnosis", "Troubleshooting", "Ticket Management", "Knowledge Base", "Escalations"],
     description: "Provides immediate technical support and issue resolution.",
-    benefits: "Reduce support costs while providing immediate assistance for common technical issues."
+    benefits: "Reduce support costs while providing immediate assistance for common technical issues.",
+    agentType: "Tech Support"
   },
   "salon": {
     title: "Salon & Spa AI Agent",
@@ -70,7 +76,8 @@ const agents = {
     audio: "/audio/salon-demo.mp3",
     features: ["Appointment Booking", "Service Info", "Product Recommendations", "Follow-ups", "Loyalty"],
     description: "Manages appointments and client communications for beauty services.",
-    benefits: "Never miss a booking opportunity and keep your beauty business running smoothly 24/7."
+    benefits: "Never miss a booking opportunity and keep your beauty business running smoothly 24/7.",
+    agentType: "Salon Spa"
   },
   "medical": {
     title: "Medical Clinic AI Agent",
@@ -78,7 +85,8 @@ const agents = {
     audio: "/audio/medical-demo.mp3",
     features: ["Appointment Scheduling", "Insurance Verification", "Patient Follow-ups", "Records Access", "Emergency Triage"],
     description: "Handles patient inquiries and medical appointment scheduling.",
-    benefits: "Improve patient care with efficient scheduling and automated follow-ups while maintaining HIPAA compliance."
+    benefits: "Improve patient care with efficient scheduling and automated follow-ups while maintaining HIPAA compliance.",
+    agentType: "Clinic"
   },
 };
 
@@ -117,6 +125,7 @@ const features = [
 
 export default function AIAgents() {
   // State to store form input values
+  const [selectedAgentType, setSelectedAgentType] = useState<string | null>(null);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -152,6 +161,7 @@ export default function AIAgents() {
           lastName,
           email,
           phone,
+          agentType: selectedAgentType,
           timestamp: new Date().toISOString(),
         }),
       });
@@ -223,7 +233,7 @@ export default function AIAgents() {
                 selectedAgent === key ? 'gradient-button text-white hover:text-white hover:text-semibold' : ''
               }`}
               onClick={() => {
-                setSelectedAgent(key);
+                setSelectedAgentType(agent.agentType)
               }}
             >
               {agent.title}
