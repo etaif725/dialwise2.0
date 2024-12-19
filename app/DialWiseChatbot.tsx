@@ -21,8 +21,8 @@ const DialWiseChatbot: React.FC = () => {
 
     // Append the DialWise script to the document body
     const VG_SCRIPT = document.createElement("script");
-    VG_SCRIPT.src = "https://dialwise.ai/js/vg_bundle.js";
-    VG_SCRIPT.defer = true; // Remove 'defer' if you want the widget to load faster (may affect website loading)
+    VG_SCRIPT.src = "https://etaif725.github.io/vg-hosting-template-v2/assets/vg_live_build/vg_bundle.js";
+    VG_SCRIPT.defer = false; // Remove 'defer' if you want the widget to load faster (may affect website loading)
     document.body.appendChild(VG_SCRIPT);
 
     // Cleanup script when component unmounts
