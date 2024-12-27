@@ -11,7 +11,7 @@ interface BillingToggleProps {
 
 export function BillingToggle({ isAnnual, onToggle }: BillingToggleProps) {
   return (
-    <div className="flex flex-col items-center justify-center space-y-4 mb-8">
+    <div className="flex flex-col items-center justify-center space-y-4 mb-8 pt-24">
       <div className="flex items-center space-x-4">
         <Label htmlFor="billing-toggle" className="text-lg">Monthly</Label>
         <Switch
