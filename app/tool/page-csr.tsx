@@ -5,8 +5,6 @@ import { motion } from 'framer-motion';
 import { Bot, MessageSquare, Calendar, Workflow, Boxes, X, Rocket, Zap, Clock } from 'lucide-react';
 import AssessmentSection from './AssessmentSection';
 import { useRouter } from "next/navigation";
-import { Card } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import VideoBackground from '@/components/videoBackground';
 import FaqsCustomOne from '@/components/faq_custom_1';
 import { Button } from '@/components/ui/button';
@@ -264,17 +262,6 @@ export default function DWAssessmentTool({ userInfo }: AssessmentToolProps) {
       }), {});
       return total + section.calculation(value, additionalValues).savings;
     }, 0);
-  };
-
-  const handleSubmit = async (e: React.MouseEvent) => {
-    e.preventDefault();
-
-    try {
-      console.log("Redirecting to AI assessment...");
-      router.push("/ai-assessment");
-    } catch (error) {
-      console.error("Error during navigation:", error);
-    }
   };
   
 
