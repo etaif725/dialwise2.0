@@ -45,7 +45,7 @@ function FaqsCustomOne() {
 
   return (
     <>
-        <section className="py-16 max-w-4xl mx-auto">
+        <section className="py-16 px-4 max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, index) => (
