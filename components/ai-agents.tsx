@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -114,7 +114,7 @@ const features = [
 ];
 
 export default function AIAgents() {
-  const [selectedAgent, setSelectedAgent] = useState("dialwise");
+  const [selectedAgent, setSelectedAgent] = useState("solar");
 
   return (
     <section className="py-24 relative overflow-hidden bg_pattern_top">
