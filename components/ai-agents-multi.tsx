@@ -5,13 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { 
   Building2, Sun, Heart, Headphones, Coins, Truck, Bot, Play, Pause, 
   Calendar, MessageSquare, Zap, Clock, Users, BarChart3, Scissors,
   BookOpen, Building, Scale, Briefcase
 } from "lucide-react";
-import AgentForm from "./forms/AgentForm";
+import ConfettiBtnFX from "./ConfettiBtnFX";
+import { useTheme } from "next-themes";
 
 const agents = {
   "dialwise": {
@@ -121,12 +123,163 @@ const features = [
   }
 ];
 
-export default function AIAgents() {
-  const [selectedAgent, setSelectedAgent] = useState("dialwise");
+
+// Example Form Components
+const RealEstateForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
+  const [propertyType, setPropertyType] = useState("");
+  const [budget, setBudget] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit({ propertyType, budget });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Property Type</label>
+        <input
+          type="text"
+          value={propertyType}
+          onChange={(e) => setPropertyType(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <label>Budget</label>
+        <input
+          type="number"
+          value={budget}
+          onChange={(e) => setBudget(e.target.value)}
+          required
+        />
+      </div>
+      <Button type="submit">Submit</Button>
+    </form>
+  );
+};
+
+const MovingForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
+  const [pickupLocation, setPickupLocation] = useState("");
+  const [dropoffLocation, setDropoffLocation] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit({ pickupLocation, dropoffLocation });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Pickup Location</label>
+        <input
+          type="text"
+          value={pickupLocation}
+          onChange={(e) => setPickupLocation(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <label>Dropoff Location</label>
+        <input
+          type="text"
+          value={dropoffLocation}
+          onChange={(e) => setDropoffLocation(e.target.value)}
+          required
+        />
+      </div>
+      <Button type="submit">Submit</Button>
+    </form>
+  );
+};
+
+// Main Component
+export default function AIAgentsMulti() {
+  // State to store form input values
+  // State to store form input values
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedAgent, setSelectedAgent] = useState("real-estate");
+  const [formStatus, setFormStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  const handleFormSubmit = async (data: any) => {
+    setIsLoading(true);
+
+    console.log("Form Data Submitted:", data);
+
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+  
+    // Validate form fields
+    if (!firstName || !lastName || !email || !phone) {
+      alert("Please fill in all required fields.");
+      setIsLoading(false);
+      return;
+    }
+  
+    try {
+      const webhookUrl = process.env.NEXT_PUBLIC_MAKE_LEAD_FORM_WEBHOOK;
+  
+      if (!webhookUrl) {
+        console.error("Webhook URL is not defined");
+        setIsLoading(false);
+        return;
+      }
+  
+      // Fetch agent details based on `selectedAgent`
+      const agentKey = selectedAgent;
+  
+      const payload = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        agentKey,
+        timestamp: new Date().toISOString(),
+      };
+  
+      console.log("Payload being sent to webhook:", payload); // Debugging log
+  
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+  
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const renderForm = () => {
+    switch (selectedAgent) {
+      case "real-estate":
+        return <RealEstateForm onSubmit={handleFormSubmit} />;
+      case "moving":
+        return <MovingForm onSubmit={handleFormSubmit} />;
+      default:
+        return <p>Select an agent to see the form</p>;
+    }
+  };
 
   return (
     <section className="py-24 relative overflow-hidden bg_pattern_top">
-      <div className="container mx-auto px-4">
+<div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -167,12 +320,10 @@ export default function AIAgents() {
               key={key}
               variant={selectedAgent === key ? "outline" : "outline"}
               className={`h-auto py-4 px-6 ${
-                selectedAgent === key
-                  ? 'gradient-button text-white hover:text-white hover:text-semibold'
-                  : ''
+                selectedAgent === key ? 'gradient-button text-white hover:text-white hover:text-semibold' : ''
               }`}
               onClick={() => {
-                console.log("Button Clicked, Agent Key Selected:", key);
+                console.log("Agent Key Selected:", key);
                 setSelectedAgent(key);
               }}
             >
@@ -231,9 +382,34 @@ export default function AIAgents() {
                 <p className="text-lg mb-8 text-gray-700 dark:text-white">
                   {agents[selectedAgent as keyof typeof agents].benefits}
                 </p>
-                <div className="my-12 mx-auto">
-                  {/* Dynamic Form */}
-                  <AgentForm agentKey={selectedAgent} />
+                <div className="container mx-auto px-4">
+                  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                    {["real-estate", "moving"].map((key) => (
+                      <Button
+                        key={key}
+                        variant={selectedAgent === key ? "outline" : "outline"}
+                        className={`h-auto py-4 px-6 ${
+                          selectedAgent === key ? "gradient-button text-white" : ""
+                        }`}
+                        onClick={() => setSelectedAgent(key)}
+                      >
+                        {key === "real-estate" ? "Real Estate Agent" : "Moving Agent"}
+                      </Button>
+                    ))}
+                  </div>
+
+                  <Card className="overflow-hidden">{renderForm()}</Card>
+
+                  {/* Render Success or Error Message */}
+                  {formStatus && (
+                    <p
+                      className={`mt-4 text-center text-lg font-semibold ${
+                        formStatus.type === "success" ? "text-green-600" : "text-red-600"
+                      }`}
+                    >
+                      {formStatus.message}
+                    </p>
+                  )}
                 </div>
               </div>
             </Card>
@@ -283,4 +459,4 @@ export default function AIAgents() {
       </div>
     </section>
   );
-}
+};

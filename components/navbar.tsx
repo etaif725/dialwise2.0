@@ -7,9 +7,10 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Menu, X } from "lucide-react";
+import { ExternalLink, Menu, MessageSquare, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
+import ClientBoardingModal from "./client-boarding-modal";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -23,6 +24,7 @@ const navItems = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClientBoardingOpen, setIsClientBoardingOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const { theme } = useTheme();
@@ -72,7 +74,7 @@ export default function Navbar() {
         <div className="container mx-auto px-4">
           <div
             className={cn(
-              "flex items-center justify-between rounded-[25px] px-6 transition-all duration-300",
+              "flex items-center justify-between rounded-[25px] px-6 transition-all duration-300 sm:bg-background/80 backdrop-blur-md border",
               isScrolled
                 ? "bg-background/80 backdrop-blur-md border shadow-lg"
                 : "bg-background/50 backdrop-blur-sm"
@@ -111,23 +113,20 @@ export default function Navbar() {
 
               <ThemeToggle />
 
-              <a
-                href="https://dialwise.ai/ai-assessment/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center"
+              <Button
+                className="items-center justify-center w-full p-4 rounded-lg bg-gradient-to-r from-yellow to-green-500 text-black font-bold hover:shadow-lg hover:scale-105 transition-all duration-200"
+                size="lg"
+                onClick={() => setIsClientBoardingOpen(true)}
               >
-                <Button className="gradient-button font-semibold">
-                  BUILD MY AI AGENT
-                </Button>
-              </a>
+                ✨ BUILD ME AN AGENT
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-4">
               <ThemeToggle />
               <Button
-                variant="ghost"
+                variant={null}
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
@@ -148,7 +147,10 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="md:hidden fixed inset-x-0 bg-background/80 backdrop-blur-md border-t shadow-lg"
+              className={cn(
+                "flex items-center justify-between rounded-[25px] mt-6 mx-4 px-6 py-4 transition-all duration-300 bg-background/80 backdrop-blur-md border shadow-lg",
+              )}
+
             >
               <div className="container px-4 py-4">
                 <div className="space-y-4">
@@ -165,17 +167,14 @@ export default function Navbar() {
                       {item.label}
                     </Link>
                   ))}
-                  <a
-                    href="https://app.dialwise.ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block mt-4"
+                  <hr></hr>
+                  <Button
+                    className="items-center justify-center w-full p-4 rounded-lg bg-gradient-to-r from-yellow to-green-500 text-black font-bold hover:shadow-lg hover:scale-105 transition-all duration-200"
+                    size="lg"
+                    onClick={() => setIsClientBoardingOpen(true)}
                   >
-                    <Button className="gradient-button w-full font-semibold">
-                      BUILD ME AN AI AGENT
-                      {/* <ExternalLink className="ml-2 h-4 w-4" /> */}
-                    </Button>
-                  </a>
+                    ✨ BUILD ME AN AGENT
+                  </Button>
                 </div>
               </div>
             </motion.div>
@@ -195,6 +194,11 @@ export default function Navbar() {
           />
         )}
       </AnimatePresence>
+
+      {/* Modals */}
+      {isClientBoardingOpen && (
+          <ClientBoardingModal isOpen={isClientBoardingOpen} onClose={() => setIsClientBoardingOpen(false)} />
+      )}
     </>
   );
 }
