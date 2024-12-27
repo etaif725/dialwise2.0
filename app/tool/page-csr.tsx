@@ -8,6 +8,9 @@ import { useRouter } from "next/navigation";
 import { Card } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import VideoBackground from '@/components/videoBackground';
+import FaqsCustomOne from '@/components/faq_custom_1';
+import { Button } from '@/components/ui/button';
+import ClientBoardingModal from '@/components/client-boarding-modal';
 
 interface AssessmentToolProps {
   userInfo: {
@@ -61,6 +64,7 @@ const faqs = [
 
 export default function DWAssessmentTool({ userInfo }: AssessmentToolProps) {
   const router = useRouter();
+  const [isClientBoardingOpen, setIsClientBoardingOpen] = useState(false);
   const [values, setValues] = useState({
     customerService: "",
     virtualReceptionist: "",
@@ -307,46 +311,26 @@ export default function DWAssessmentTool({ userInfo }: AssessmentToolProps) {
               ${calculateTotalSavings().toLocaleString()}
             </span>
           </h2>
-          <button
-            type='button'
-            onClick={handleSubmit} 
-            className="mt-4 px-8 py-4 rounded-lg bg-gradient-to-r from-yellow to-green-500 text-black font-bold hover:shadow-lg hover:scale-105 transition-all duration-200"
+          <Button
+            className="mt-4 p-6 rounded-lg bg-gradient-to-r from-yellow to-green-500 text-black font-bold hover:shadow-lg hover:scale-105 transition-all duration-200 font-bold text-lg"
+            size="lg"
+            onClick={() => setIsClientBoardingOpen(true)}
           >
-            I'd like to continue further
-          </button>
+            BUILD ME AN AGENT
+          </Button>
         </div>
         
         {/* FAQs */}
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center py-20">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">F</span>requently <span className="gradient-text">A</span>sked <span className="gradient-text">Q</span>uestion<span className="gradient-text">s</span>
-            </h1>
-          </div>
-            <Accordion type="single" collapsible className="w-full space-y-6">
-                {faqs.map((faq, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <AccordionItem value={`item-${index}`} className="border rounded-lg px-6">
-                      <AccordionTrigger className="text-left">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </motion.div>
-                ))}
-            </Accordion>
-          </div>
+        <FaqsCustomOne />
       </div>
     </motion.div>
   </div>
   <VideoBackground />
+
+  {/* Modals */}
+  {isClientBoardingOpen && (
+    <ClientBoardingModal isOpen={isClientBoardingOpen} onClose={() => setIsClientBoardingOpen(false)} />
+  )}
   </>
   );
 }

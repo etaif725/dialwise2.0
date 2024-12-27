@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import Analytics from './analytics';
 import DialWiseChatbot from './DialWiseChatbot';
+import { ClientProvider } from '@/store/ClientStore';
 
 export default function RootLayout({
   children,
@@ -12,6 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <ClientProvider>
       <Analytics />
       <body className="min-h-screen bg-background text-foreground">
         <ThemeProvider
@@ -30,6 +32,7 @@ export default function RootLayout({
           <DialWiseChatbot />
         </div>
       </body>
+      </ClientProvider>
     </html>
   );
 }

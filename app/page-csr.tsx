@@ -12,10 +12,16 @@ import CalendarModal from "@/components/calendar-modal";
 import { Calendar, MessageSquare } from "lucide-react";
 import { AudioSection } from "@/components/audioSection";
 import VideoBackground from "@/components/videoBackground";
-import LeadForm from "@/components/lead_form";
 import { useRouter } from "next/navigation";
+import LeadForm from "@/components/lead_form";
 
-export default function DWHomePage() {
+
+interface LeadFormProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function DWHomePage({ isOpen, onClose }: LeadFormProps) {
   const router = useRouter();
 
   const handleClick = () => {
@@ -82,22 +88,22 @@ export default function DWHomePage() {
                 Schedule Demo
                 <Calendar className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
+              {/* <Button 
                 type="button"
                 size="lg"
                 className="text-white hover:text-white gradient-button"
                 onClick={handleClick}
               >
                 Get Started
-              </Button>
-              {/* <Button
+              </Button>  */}
+              <Button
                 size="lg"
                 variant="outline"
-                onClick={() => setIsChatOpen(true)}
+                onClick={() => setIsLeadFormOpen(true)}
               >
                 Talk to AI Agent
                 <MessageSquare className="ml-2 h-5 w-5" />
-              </Button> */}
+              </Button>
             </div>
           </motion.div>
 
