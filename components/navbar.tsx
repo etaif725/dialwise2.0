@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="container mx-auto px-4">
           <div
             className={cn(
-              "flex items-center justify-between rounded-[25px] px-6 transition-all duration-300 sm:bg-background/80 backdrop-blur-md border",
+              "flex items-center justify-between rounded-[25px] px-6 transition-all duration-300 bg-background/80 backdrop-blur-md border",
               isScrolled
                 ? "bg-background/80 backdrop-blur-md border shadow-lg"
                 : "bg-background/50 backdrop-blur-sm"
@@ -146,9 +146,11 @@ export default function Navbar() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
               className={cn(
-                "flex items-center justify-between rounded-[25px] mt-6 mx-4 px-6 py-4 transition-all duration-300 bg-background/80 backdrop-blur-md border shadow-lg",
+                "flex items-center justify-between rounded-[25px] mt-6 mx-4 px-6 py-4 transition-all duration-300 border",
+                isScrolled
+                ? "bg-background/80 backdrop-blur-md border shadow-lg"
+                : "bg-background/50 backdrop-blur-sm"
               )}
 
             >
@@ -188,7 +190,6 @@ export default function Navbar() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
             className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
             onClick={() => setIsMobileMenuOpen(false)}
           />
