@@ -13,13 +13,13 @@ const sections = [
     links: [
       { label: "Benefits", href: "/benefits" },
       { label: "Solutions", href: "/solutions" },
-      { label: "FAQs", href: "/faqs" },
+      { label: "Pricing", href: "/pricing" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "/about" },
+      { label: "FAQs", href: "/faqs" },
       { label: "Contact", href: "/contact" },
       { label: "Server Status", href:"/status" },
       

@@ -10,12 +10,12 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { getPriority } from "os";
 
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/benefits", label: "Benefits" },
   { href: "/solutions", label: "Solutions" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/faqs", label: "FAQs" },
   { href: "/contact", label: "Contact" }
 ];
@@ -112,14 +112,13 @@ export default function Navbar() {
               <ThemeToggle />
 
               <a
-                href="https://app.dialwise.ai"
+                href="https://dialwise.ai/ai-assessment/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center"
               >
-                <Button className="gradient-button">
-                  Sign In
-                  <ExternalLink className="ml-2 h-4 w-4" />
+                <Button className="gradient-button font-semibold">
+                  BUILD MY AI AGENT
                 </Button>
               </a>
             </div>
@@ -172,9 +171,9 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="block mt-4"
                   >
-                    <Button className="w-full gradient-button">
-                      Sign In
-                      <ExternalLink className="ml-2 h-4 w-4" />
+                    <Button className="gradient-button w-full font-semibold">
+                      BUILD ME AN AI AGENT
+                      {/* <ExternalLink className="ml-2 h-4 w-4" /> */}
                     </Button>
                   </a>
                 </div>
