@@ -76,7 +76,7 @@ const benefits = [
   },
   {
     icon: <Clock className="h-8 w-8" />,
-    title: "90-Day Cookie",
+    title: "30-Day Cookie",
     description: "Long attribution window to maximize your earnings.",
   },
   {
@@ -270,31 +270,29 @@ export default function DWAffiliatePage() {
       </motion.section>
 
       {/* FAQs Section */}
-      <section className="pb-10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <AccordionItem value={`item-${index}`} className="border rounded-lg px-6">
-                    <AccordionTrigger className="text-left">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
+        <section className="py-16 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <AccordionItem value={`item-${index}`} className="border rounded-lg px-6">
+                  <AccordionTrigger className="text-left">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
+            ))}
+          </Accordion>
+        </section>
 
       {/* Lead Form Modal */}
       {isLeadFormOpen && (

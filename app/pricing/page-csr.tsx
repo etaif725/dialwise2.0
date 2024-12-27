@@ -15,7 +15,7 @@ export default function PricingPage() {
   return (
     <>
     <div className="min-h-screen pt-20 bg_pattern_top">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-24">
         <PricingHeader />
         <BillingToggle isAnnual={isAnnual} onToggle={setIsAnnual} />
         
