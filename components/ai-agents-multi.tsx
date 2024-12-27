@@ -16,14 +16,6 @@ import ConfettiBtnFX from "./ConfettiBtnFX";
 import { useTheme } from "next-themes";
 
 const agents = {
-  "dialwise": {
-    title: "DialWise AI Agent",
-    avatar: "/agents/dialwise.webp",
-    audio: "/audio/",
-    features: ["Property Inquiries", "Lead Qualification", "Appointment Setting", "Market Updates", "24/7 Support"],
-    description: "Handles property inquiries, qualifies leads, and schedules viewings automatically.",
-    benefits: "Never miss a potential buyer or seller. Our AI agents handle inquiries 24/7, qualify leads, and schedule viewings automatically."
-  },
   "real-estate": {
     title: "Real Estate AI Agent",
     avatar: "/agents/realestate.webp",
