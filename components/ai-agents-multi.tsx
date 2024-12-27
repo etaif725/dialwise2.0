@@ -1,19 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { 
   Building2, Sun, Heart, Headphones, Coins, Truck, Bot, Play, Pause, 
   Calendar, MessageSquare, Zap, Clock, Users, BarChart3, Scissors,
   BookOpen, Building, Scale, Briefcase
 } from "lucide-react";
-import ConfettiBtnFX from "./ConfettiBtnFX";
-import { useTheme } from "next-themes";
 
 const agents = {
   "real-estate": {
