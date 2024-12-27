@@ -167,7 +167,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700" htmlFor="phone">
+        <label className="block text-sm font-medium" htmlFor="phone">
           Phone Number
         </label>
         <PhoneInput
