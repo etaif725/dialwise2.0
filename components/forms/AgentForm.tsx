@@ -128,7 +128,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
     <form onSubmit={handleSubmit} className="space-y-4">
       {/* Default Fields */}
       <div>
-        <label className="block text-sm font-medium" htmlFor="firstName">
+        <label className="block text-sm font-medium text-black dark:text-white" htmlFor="firstName">
           First Name
         </label>
         <input
@@ -136,12 +136,12 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
           id="firstName"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-          className="block w-full px-4 py-2 border rounded-md"
+          className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
           required
         />
       </div>
       <div>
-        <label className="block text-sm font-medium" htmlFor="lastName">
+        <label className="block text-sm font-medium text-black dark:text-white" htmlFor="lastName">
           Last Name
         </label>
         <input
@@ -149,12 +149,12 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
           id="lastName"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
-          className="block w-full px-4 py-2 border rounded-md"
+          className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
           required
         />
       </div>
       <div>
-        <label className="block text-sm font-medium" htmlFor="email">
+        <label className="block text-sm font-medium text-black dark:text-white" htmlFor="email">
           Email Address
         </label>
         <input
@@ -162,12 +162,12 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="block w-full px-4 py-2 border rounded-md"
+          className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
           required
         />
       </div>
       <div>
-        <label className="block text-sm font-medium" htmlFor="phone">
+        <label className="block text-sm font-medium text-black dark:text-white" htmlFor="phone">
           Phone Number
         </label>
         <PhoneInput
@@ -195,7 +195,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
       {agentKey === "real-estate" && (
         <>
           <div>
-            <label className="block text-sm font-medium" htmlFor="propertyType">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="propertyType">
               Property Type
             </label>
             <input
@@ -203,13 +203,13 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="propertyType"
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               placeholder="e.g., Single-family, Condo"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="budget">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="budget">
               Budget
             </label>
             <input
@@ -217,20 +217,20 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="budget"
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               placeholder="e.g., $500,000"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="rentOrBuy">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="rentOrBuy">
               Rent or Buy
             </label>
             <select
               id="rentOrBuy"
               value={rentOrBuy}
               onChange={(e) => setRentOrBuy(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               required
             >
               <option value="">Select</option>
@@ -245,7 +245,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
       {agentKey === "moving" && (
         <>
           <div>
-            <label className="block text-sm font-medium" htmlFor="moveDate">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="moveDate">
               Move Date
             </label>
             <input
@@ -253,12 +253,12 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="moveDate"
               value={moveDate}
               onChange={(e) => setMoveDate(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="originZip">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="originZip">
               Origin ZIP Code
             </label>
             <input
@@ -266,12 +266,12 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="originZip"
               value={originZip}
               onChange={(e) => setOriginZip(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="destinationZip">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="destinationZip">
               Destination ZIP Code
             </label>
             <input
@@ -279,19 +279,19 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="destinationZip"
               value={destinationZip}
               onChange={(e) => setDestinationZip(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="homeType">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="homeType">
               Home Type
             </label>
             <select
               id="homeType"
               value={homeType}
               onChange={(e) => setHomeType(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               required
             >
               <option value="">Select Home Type</option>
@@ -311,7 +311,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
       {agentKey === "solar" && (
         <>
           <div>
-            <label className="block text-sm font-medium" htmlFor="installationDate">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="installationDate">
               Installation Date
             </label>
             <input
@@ -319,12 +319,12 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="installationDate"
               value={installationDate}
               onChange={(e) => setInstallationDate(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="roofType">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="roofType">
               Roof Type
             </label>
             <input
@@ -332,13 +332,13 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="roofType"
               value={roofType}
               onChange={(e) => setRoofType(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               placeholder="e.g., Flat, Pitched"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="electricityBill">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="electricityBill">
               Monthly Electricity Bill
             </label>
             <input
@@ -346,7 +346,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="electricityBill"
               value={electricityBill}
               onChange={(e) => setElectricityBill(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               placeholder="e.g., $150"
               required
             />
@@ -357,7 +357,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
       {agentKey === "finance" && (
         <>
           <div>
-            <label className="block text-sm font-medium" htmlFor="creditScore">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="creditScore">
               Credit Score
             </label>
             <input
@@ -365,13 +365,13 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="creditScore"
               value={creditScore}
               onChange={(e) => setCreditScore(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               placeholder="e.g., 650"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="loanAmount">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="loanAmount">
               Desired Loan Amount
             </label>
             <input
@@ -379,7 +379,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               id="loanAmount"
               value={loanAmount}
               onChange={(e) => setLoanAmount(e.target.value)}
-              className="block w-full px-4 py-2 border rounded-md"
+              className="block w-full px-4 py-2 border rounded-md text-black dark:text-white"
               placeholder="e.g., $20,000"
               required
             />
@@ -391,7 +391,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
         <div className="space-y-4">
           {/* Issue Description */}
           <div>
-            <label className="block text-sm font-medium mb-2">Issue Description</label>
+            <label className="block text-sm font-medium mb-2 text-black dark:text-white">Issue Description</label>
             <textarea
               placeholder="Describe the issue in detail"
               rows={4}
@@ -404,7 +404,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
 
           {/* Device Type */}
           <div>
-            <label className="block text-sm font-medium mb-2">Device Type</label>
+            <label className="block text-sm font-medium mb-2 text-black dark:text-white">Device Type</label>
             <input
               type="text"
               placeholder="Enter device type (e.g., Laptop, Phone)"
@@ -417,7 +417,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
 
           {/* Operating System */}
           <div>
-            <label className="block text-sm font-medium mb-2">Operating System</label>
+            <label className="block text-sm font-medium mb-2 text-black dark:text-white">Operating System</label>
             <select
               className="w-full p-3 border rounded-md focus:ring-2 focus:ring-primary outline-none"
               value={operatingSystem}
@@ -436,7 +436,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
 
           {/* Urgency Level */}
           <div>
-            <label className="block text-sm font-medium mb-2">Urgency Level</label>
+            <label className="block text-sm font-medium mb-2 text-black dark:text-white">Urgency Level</label>
             <select
               className="w-full p-3 border rounded-md focus:ring-2 focus:ring-primary outline-none"
               value={urgencyLevel}
@@ -456,7 +456,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
       {agentKey === "hvac" && (
         <>
           <div>
-            <label className="block text-sm font-medium" htmlFor="serviceType">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="serviceType">
               Service Type
             </label>
             <select
@@ -473,7 +473,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="systemAge">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="systemAge">
               Age of Current System (Years)
             </label>
             <input
@@ -491,7 +491,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
       {agentKey === "medical" && (
         <>
           <div>
-            <label className="block text-sm font-medium" htmlFor="appointmentDate">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="appointmentDate">
               Appointment Date
             </label>
             <input
@@ -504,7 +504,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="serviceNeeded">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="serviceNeeded">
               Service Needed
             </label>
             <input
@@ -523,7 +523,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
       {agentKey === "salon" && (
         <>
           <div>
-            <label className="block text-sm font-medium" htmlFor="preferredStylist">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="preferredStylist">
               Preferred Stylist
             </label>
             <input
@@ -537,7 +537,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium" htmlFor="appointmentType">
+            <label className="block text-sm font-medium text-black dark:text-white" htmlFor="appointmentType">
               Appointment Type
             </label>
             <input
