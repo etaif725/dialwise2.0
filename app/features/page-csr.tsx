@@ -54,7 +54,7 @@ const features = [
     feature_title: "Global Communication",
     description: "Break language barriers with real-time translation and localization support, enabling worldwide business expansion.",
     benefits: [
-      "25+ languages supported",
+      "29 languages supported",
       "Cultural context awareness",
       "Real-time translation",
       "Local market adaptation"
