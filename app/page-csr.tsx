@@ -15,13 +15,7 @@ import VideoBackground from "@/components/videoBackground";
 import { useRouter } from "next/navigation";
 import LeadForm from "@/components/lead_form";
 
-
-interface LeadFormProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export default function DWHomePage({ isOpen, onClose }: LeadFormProps) {
+export default function DWHomePage() {
   const router = useRouter();
 
   const handleClick = () => {
