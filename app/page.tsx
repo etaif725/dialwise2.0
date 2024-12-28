@@ -4,7 +4,7 @@ import DWHomePage from "./page-csr";
 export const metadata: Metadata = {
   metadataBase: new URL('https://dialwise.ai'),
   title: {
-    default: 'Revolutionary AI Voice Agents & Chatbots | DialWise.ai',
+    default: 'Humanized AI Voice Agents & Chatbots | DialWise.ai',
     template: '%s | DialWise.ai',
   },
   description:
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-    shortcut: '/shortcut-icon.png',
+    icon: '/favicon.webp',
+    apple: '/favicon.webp',
+    shortcut: '/favicon.webp',
   },
 };
 

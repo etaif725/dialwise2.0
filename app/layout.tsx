@@ -4,7 +4,7 @@ import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import Analytics from './analytics';
 import DialWiseChatbot from './DialWiseChatbot';
-import FloatingBar from './DialWiseAgentBar';
+import DialWiseAgentBar from './DialWiseAgentBar';
 
 export default function RootLayout({
   children,
@@ -29,7 +29,7 @@ export default function RootLayout({
         </ThemeProvider>
         <div style={{ width: 0, height: 0 }} id="VG_OVERLAY_CONTAINER">
         </div>
-        <FloatingBar />
+        <DialWiseAgentBar />
       </body>
     </html>
   );
