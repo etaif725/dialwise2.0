@@ -146,10 +146,10 @@ const DialWiseAgentBar = () => {
             console.error("VAPI client is not initialized.");
             return;
         }
-
+    
         setIsCalling(true);
         stopVibrationSound(); // Stop the vibration sound when starting the call
-
+    
         vapiInstance.start("122424e6-3e07-4c57-9152-5a20d606d5eb")
             .then(() => {
                 console.log("Call started successfully!");
