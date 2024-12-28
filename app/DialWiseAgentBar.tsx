@@ -69,7 +69,7 @@ const DialWiseAgentBar = () => {
     // Play vibration sound only once after user interaction
     useEffect(() => {
         if (!audioRef.current) {
-            audioRef.current = new Audio('/audio/vibration.mp3');
+            audioRef.current = new Audio('https://dialwise.ai/audio/vibration.mp3');
         }
         const audio = audioRef.current;
 
@@ -157,7 +157,7 @@ const DialWiseAgentBar = () => {
         setIsCalling(true);
         stopVibrationSound(); // Stop the vibration sound when starting the call
 
-        vapiInstance.start("122424e6-3e07-4c57-9152-5a20d606d5eb")
+        vapiInstance.start(assistantId)
             .then(() => {
                 console.log("Call started successfully!");
                 setIsConnected(true); // Set connected state to true
