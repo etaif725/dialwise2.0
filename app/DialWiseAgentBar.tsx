@@ -11,6 +11,7 @@ const DialWiseAgentBar = () => {
     const [isConnected, setIsConnected] = useState(false); // New state to track call connection status
     const [callDuration, setCallDuration] = useState(0); // State for call duration
     const [vapiInstance, setVapiInstance] = useState<any>(null);
+    const [audioAllowed, setAudioAllowed] = useState(false); // Track if audio can be played
 
     // Ref to store the vibration sound
     const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -65,7 +66,7 @@ const DialWiseAgentBar = () => {
         };
     }, []);
 
-    // Play vibration sound only once
+    // Play vibration sound only once after user interaction
     useEffect(() => {
         if (!audioRef.current) {
             audioRef.current = new Audio('/audio/vibration.mp3');
@@ -75,14 +76,19 @@ const DialWiseAgentBar = () => {
         // Play only if the sound isn't already playing
         const playSound = () => {
             if (audio.paused) {
-                audio.play();
+                audio.play().catch((e) => {
+                    console.error("Error playing audio:", e);
+                    setAudioAllowed(false); // Prevent further audio attempts if playback fails
+                });
             }
         };
 
-        // Show floating bar and play sound after 7 seconds
+        // Show floating bar and play sound after 7 seconds, but only if audio is allowed
         const timer = setTimeout(() => {
             setVisible(true);
-            playSound();
+            if (audioAllowed) {
+                playSound();
+            }
         }, 7000); // 7-second delay
 
         return () => {
@@ -90,7 +96,7 @@ const DialWiseAgentBar = () => {
             audio.pause();
             audio.currentTime = 0; // Reset audio when cleanup happens
         };
-    }, []);
+    }, [audioAllowed]);
 
     // Stop vibration sound
     const stopVibrationSound = () => {
@@ -142,6 +148,7 @@ const DialWiseAgentBar = () => {
 
     // Start Web Call
     const handleStartCall = () => {
+        const assistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID || "";
         if (!vapiInstance) {
             console.error("VAPI client is not initialized.");
             return;
