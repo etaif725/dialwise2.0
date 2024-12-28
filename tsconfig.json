@@ -38,7 +38,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts", 
     "public/js/fbevents.js"
-  ],
+, "components/vapi-float.tsx"  ],
   "exclude": [
     "node_modules",
     ".next",
