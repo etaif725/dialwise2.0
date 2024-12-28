@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
 import AdvantagesGrid from "@/components/advantages-grid";
@@ -14,13 +14,10 @@ import { AudioSection } from "@/components/audioSection";
 import VideoBackground from "@/components/videoBackground";
 import { useRouter } from "next/navigation";
 import LeadForm from "@/components/lead_form";
+import DialWiseAgentBar from "./DialWiseAgentBar";
 
 export default function DWHomePage() {
   const router = useRouter();
-
-  const handleClick = () => {
-    router.push('/tool');
-  };
 
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
@@ -41,21 +38,22 @@ export default function DWHomePage() {
     ["0px 0px 0px rgba(0,0,0,0)", "0px 20px 50px rgba(0,0,0,0.3)"]
   );
 
+  useEffect(() => {
+    const hasVisited = localStorage.getItem("hasVisited");
+
+    if (!hasVisited) {
+      // Set the flag in localStorage to indicate the user has visited
+      localStorage.setItem("hasVisited", "true");
+
+      // Refresh the page once after the initial load
+      window.location.reload();
+    }
+  }, []);
+
   return (
     <div ref={containerRef} className="relative">
       {/* Hero Section */}
       <section className="min-h-screen relative flex items-center justify-center overflow-hidden pt-32 md:pt-40 bg_pattern_top">
-        {/* <motion.div
-          style={{ y }}
-          className="absolute inset-0 z-0"
-        >
-          <div className="noise-bg relative mx-auto overflow-hidden bg-transparent -z-999">
-          <Spline
-            scene="https://prod.spline.design/WaUDt5qq2ZWsfEoq/scene.splinecode" 
-          />
-          </div> 
-        </motion.div> */}
-
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -68,12 +66,12 @@ export default function DWHomePage() {
               <span className="gradient-text">Human</span> Touch
             </h1>
             <p className="text-xl text-[#888888] mb-8">
-              Dominate your field and increase your reach at the click of a button. Make 
-              thousands of calls, book more appointments, and never miss a lead again with 
+              Dominate your field and increase your reach at the click of a button. Make
+              thousands of calls, book more appointments, and never miss a lead again with
               our AI voice agents.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 size="lg"
                 variant="outline"
                 className="text-black dark:text-white hover:text-semibold"
@@ -82,14 +80,6 @@ export default function DWHomePage() {
                 Schedule Demo
                 <Calendar className="ml-2 h-5 w-5" />
               </Button>
-              {/* <Button 
-                type="button"
-                size="lg"
-                className="text-white hover:text-white gradient-button"
-                onClick={handleClick}
-              >
-                Get Started
-              </Button>  */}
               <Button
                 size="lg"
                 variant="outline"
@@ -122,11 +112,10 @@ export default function DWHomePage() {
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
             </div>
-
           </motion.div>
         </div>
       </section>
-                                  
+
       {/* Rest of the sections */}
       <IntegrationsSection />
       <AIAgents />
@@ -135,14 +124,15 @@ export default function DWHomePage() {
       <Testimonials />
       <CTA />
       <VideoBackground />
-      
-        {/* Modals */}
-        {isCalendarOpen && (
-          <CalendarModal isOpen={isCalendarOpen} onClose={() => setIsCalendarOpen(false)} />
-        )}
-        {isLeadFormOpen && (
-          <LeadForm isOpen={isLeadFormOpen} onClose={() => setIsLeadFormOpen(false)} />
-        )}
+      <DialWiseAgentBar />
+
+      {/* Modals */}
+      {isCalendarOpen && (
+        <CalendarModal isOpen={isCalendarOpen} onClose={() => setIsCalendarOpen(false)} />
+      )}
+      {isLeadFormOpen && (
+        <LeadForm isOpen={isLeadFormOpen} onClose={() => setIsLeadFormOpen(false)} />
+      )}
     </div>
   );
 }
