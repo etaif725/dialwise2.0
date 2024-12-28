@@ -11,23 +11,54 @@ const DialWiseAgentBar = () => {
     const [isConnected, setIsConnected] = useState(false);
     const [callDuration, setCallDuration] = useState(0);
     const [vapiInstance, setVapiInstance] = useState<any>(null);
-    const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const callTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-    // Initialize audio on component mount
+    // Simple visibility timer - separate from everything else
     useEffect(() => {
-        audioRef.current = new Audio('https://dialwise.ai/audio/vibration.aac');
-        audioRef.current.loop = true; // Make the audio loop until stopped
-
-        // Clean up audio on unmount
-        return () => {
+        console.log("Setting visibility timer");
+        const timer = setTimeout(() => {
+            console.log("Making component visible");
+            setVisible(true);
+            // Try to play audio when component becomes visible
             if (audioRef.current) {
-                audioRef.current.pause();
-                audioRef.current.src = '';
+                audioRef.current.play().catch(console.error);
+            }
+        }, 7000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    // Initialize audio
+    useEffect(() => {
+        console.log("Initializing audio");
+        audioRef.current = new Audio('https://dialwise.ai/audio/vibration.mp3');
+        const audio = audioRef.current;
+
+        const handleEnded = () => {
+            if (visible && !isCalling && !isConnected && audio) {
+                audio.currentTime = 0;
+                audio.play().catch(console.error);
             }
         };
-    }, []);
+
+        audio.addEventListener('ended', handleEnded);
+
+        // Handle user interaction
+        const handleUserInteraction = () => {
+            if (visible && !isCalling && !isConnected && audio) {
+                audio.play().catch(console.error);
+            }
+        };
+
+        document.addEventListener('click', handleUserInteraction);
+
+        return () => {
+            audio.removeEventListener('ended', handleEnded);
+            document.removeEventListener('click', handleUserInteraction);
+            stopVibrationSound();
+        };
+    }, [visible, isCalling, isConnected]);
 
     // Load Vapi SDK dynamically
     useEffect(() => {
@@ -41,6 +72,7 @@ const DialWiseAgentBar = () => {
             script.onload = () => {
                 const assistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID || "";
                 const apiKey = process.env.NEXT_PUBLIC_VAPI_API_KEY || "";
+
                 const buttonConfig = {};
 
                 const instance = window.vapiSDK.run({
@@ -51,60 +83,32 @@ const DialWiseAgentBar = () => {
 
                 setVapiInstance(instance);
 
+                instance.on("speech-start", () => console.log("Speech has started"));
+                instance.on("speech-end", () => console.log("Speech has ended"));
                 instance.on("call-start", () => {
                     console.log("Call has started");
                     setIsConnected(true);
-                    stopVibrationSound();
                 });
                 instance.on("call-end", () => {
                     console.log("Call has stopped");
                     setIsConnected(false);
                     setCallDuration(0);
                 });
-                // ... other event listeners remain the same
+                instance.on("volume-level", (volume: any) => console.log("Assistant volume level:", volume));
+                instance.on("message", (message: any) => console.log(message));
+                instance.on("error", (e: any) => console.error(e));
             };
         };
 
         loadVapiScript();
     }, []);
 
-    // Function to play vibration sound
-    const playVibrationSound = async () => {
-        if (!audioRef.current || isAudioPlaying) return;
-
-        try {
-            // Request audio permission and play
-            await audioRef.current.play();
-            setIsAudioPlaying(true);
-            console.log("Vibration sound started");
-        } catch (error) {
-            console.error("Error playing audio:", error);
-            setIsAudioPlaying(false);
+    const stopVibrationSound = () => {
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
         }
     };
-
-    // Function to stop vibration sound
-    const stopVibrationSound = () => {
-        if (!audioRef.current) return;
-
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-        setIsAudioPlaying(false);
-        console.log("Vibration sound stopped");
-    };
-
-    // Show floating bar and play sound after 7 seconds
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setVisible(true);
-            playVibrationSound();
-        }, 7000);
-
-        return () => {
-            clearTimeout(timer);
-            stopVibrationSound();
-        };
-    }, []);
 
     // Countdown logic
     useEffect(() => {
@@ -142,47 +146,42 @@ const DialWiseAgentBar = () => {
     useEffect(() => {
         if (timeLeft === 0) {
             setVisible(false);
-            stopVibrationSound();
         }
     }, [timeLeft]);
 
-    // Start Web Call
-    const handleStartCall = async () => {
+    const handleStartCall = () => {
+        stopVibrationSound();
+        setIsCalling(true);
+        
         const assistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID || "";
         if (!vapiInstance) {
             console.error("VAPI client is not initialized.");
             return;
         }
 
-        setIsCalling(true);
-        stopVibrationSound();
-
-        try {
-            await vapiInstance.start(assistantId);
-            console.log("Call started successfully!");
-            setIsConnected(true);
-        } catch (e) {
-            console.error("Failed to start call:", e);
-        } finally {
-            setIsCalling(false);
-        }
+        vapiInstance.start(assistantId)
+            .then(() => {
+                console.log("Call started successfully!");
+                setIsConnected(true);
+            })
+            .catch((e: any) => {
+                console.error("Failed to start call:", e);
+                setIsCalling(false);
+            });
     };
 
-    // End Web Call
     const handleEndCall = () => {
         if (vapiInstance) {
             vapiInstance.stop();
-            console.log("Call ended.");
         }
+        stopVibrationSound();
         setIsCalling(false);
         setIsConnected(false);
         setVisible(false);
-        stopVibrationSound();
     };
 
     if (!visible) return null;
 
-    // Rest of the component render code remains the same...
     return (
         <div
             className={cn(
@@ -208,6 +207,7 @@ const DialWiseAgentBar = () => {
 
             {/* Timer and Call/End Buttons */}
             <div className="flex items-center gap-3">
+                {/* Call Duration Timer */}
                 {isConnected && (
                     <div className="text-sm text-gray-600 ml-3">
                         {formatTime(callDuration)}

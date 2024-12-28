@@ -12,13 +12,10 @@ import CalendarModal from "@/components/calendar-modal";
 import { Calendar, MessageSquare } from "lucide-react";
 import { AudioSection } from "@/components/audioSection";
 import VideoBackground from "@/components/videoBackground";
-import { useRouter } from "next/navigation";
 import LeadForm from "@/components/lead_form";
 import DialWiseAgentBar from "./DialWiseAgentBar";
 
 export default function DWHomePage() {
-  const router = useRouter();
-
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
