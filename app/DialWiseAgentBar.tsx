@@ -17,7 +17,7 @@ const DialWiseAgentBar = () => {
 
     // Initialize audio on component mount
     useEffect(() => {
-        audioRef.current = new Audio('https://dialwise.ai/audio/vibration.mp3');
+        audioRef.current = new Audio('https://dialwise.ai/audio/vibration.aac');
         audioRef.current.loop = true; // Make the audio loop until stopped
 
         // Clean up audio on unmount
