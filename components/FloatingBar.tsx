@@ -113,7 +113,7 @@ const FloatingBar = () => {
             </div>
 
             {/* Countdown Timer */}
-            <div className="text-lg font-semibold ml-4">
+            <div className="hidden md:text-lg md:font-semibold md:ml-4">
                 {formatTime(timeLeft)}
             </div>
         </div>
