@@ -119,7 +119,7 @@ const Footer = () => {
           <div className="mt-12 pt-8 border-t">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-sm text-muted-foreground">
-                © {currentYear} DialWise.ai. All rights reserved. Owned by RYSEUP Solutions LLC.
+                © {currentYear} DialWise.ai. All rights reserved. DialWise.ai is a proprietary product of RYSEUP Solutions LLC.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 {/* <Link href="/partners" className="text-sm text-muted-foreground hover:text-primary">
