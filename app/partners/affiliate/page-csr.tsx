@@ -97,7 +97,7 @@ const tiers = [
   {
     name: "Premium Affiliate",
     price: "8.5%",
-    popular: true,
+    popular: false,
     features: [
       "Monthly sales $10,001 - $50,000",
     ],
