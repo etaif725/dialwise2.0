@@ -61,7 +61,7 @@ const steps = [
   },
   {
     title: "Step 3: Start Earning",
-    description: "Share your link and earn up to 20% commission for each referral we board.",
+    description: "Share your link and earn up to 12.5% commission for each referral we successfully board.",
     icon: Trophy,
     action: "Get Started",
     type: "lead",
