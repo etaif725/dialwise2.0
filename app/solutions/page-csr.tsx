@@ -47,6 +47,8 @@ const aiSolutions = [
       { name: "OpenAI", logo: "/logos/openai.webp" },
       { name: "Anthropic", logo: "/logos/anthropic.webp" },
       { name: "Llama", logo: "/logos/llama.webp" },
+      { name: "Deepseek", logo: "/logos/deepseek.webp" },
+      { name: "Deepgram", logo: "/logos/deepgram.webp" },
       { name: "Grok", logo: "/logos/grok.webp" },
       { name: "Gemini Pro", logo: "/logos/gemini.webp" },
       { name: "Perplexity", logo: "/logos/perplexity.webp" },
