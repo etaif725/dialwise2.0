@@ -19,11 +19,11 @@ import AffiliateModal from "@/components/affiliate-modal";
 const faqs = [
   {
     question: "How does the affiliate program work?",
-    answer: "Our affiliate program is designed to reward partners who promote DialWise.ai. You'll receive a unique referral link, and when someone signs up through your link, you earn a commission on their subscription. We track all referrals for 90 days using cookies."
+    answer: "Our affiliate program is designed to reward partners who promote DialWise.ai. You'll receive a unique referral link, and when someone signs up through your link, you earn a commission on their subscription. We track all referrals for 30 days using cookies."
   },
   {
     question: "What are the commission rates?",
-    answer: "We offer tiered commission rates: 10% for Standard Partners (up to $10,000 monthly sales), 16.5% for Premium Partners ($10,000-$50,000), and 20% for Elite Partners (above $50,000). Commissions are paid monthly via PayPal or bank transfer."
+    answer: "We offer tiered commission rates: 5% for Standard Partners (up to $10,000 monthly sales), 8.5% for Premium Partners ($10,001-$50,000), and 12.5% for Elite Partners (above $50,001). Commissions are paid monthly via PayPal, or bank transfer."
   },
   {
     question: "What marketing materials do you provide?",
@@ -71,8 +71,8 @@ const steps = [
 const benefits = [
   {
     icon: <DollarSign className="h-8 w-8" />,
-    title: "High Commission Rates",
-    description: "Earn up to 20% on all referred sales with lifetime value.",
+    title: "High Ticket Products",
+    description: "Earn up to 12.5% on all referred First-Time-Depositor (FTD).",
   },
   {
     icon: <Clock className="h-8 w-8" />,
@@ -89,36 +89,24 @@ const benefits = [
 const tiers = [
   {
     name: "Standard Affiliate",
-    price: "10%",
+    price: "5%",
     features: [
       "Monthly sales up to $10,000",
-      "Basic marketing materials",
-      "Standard support",
-      "Monthly payouts"
     ],
   },
   {
     name: "Premium Affiliate",
-    price: "16.5%",
+    price: "8.5%",
     popular: true,
     features: [
-      "Monthly sales $10,000 - $50,000",
-      "Premium marketing kit",
-      "Priority support",
-      "Co-marketing opportunities",
-      "Early access to features"
+      "Monthly sales $10,001 - $50,000",
     ],
   },
   {
     name: "Elite Affiliate",
-    price: "20%",
+    price: "12.5%",
     features: [
-      "Monthly sales above $50,000",
-      "Custom marketing materials",
-      "Dedicated account manager",
-      "Strategic partnership",
-      "Quarterly business reviews",
-      "Custom integration support",
+      "Monthly sales above $50,001",
     ],
   },
 ];
