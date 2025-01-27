@@ -177,30 +177,6 @@ export default function DWAffiliatePage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Affiliate Benefits</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="p-6 h-full">
-                    <div className="text-primary mb-4">{benefit.icon}</div>
-                    <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-muted-foreground">{benefit.description}</p>
-                  </Card>
-                </motion.div>
-              ))}
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -256,6 +232,30 @@ export default function DWAffiliatePage() {
           </div>
         </div>
       </motion.section>
+      
+      {/* Benefits Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Affiliate Benefits</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="p-6 h-full">
+                    <div className="text-primary mb-4">{benefit.icon}</div>
+                    <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                    <p className="text-muted-foreground">{benefit.description}</p>
+                  </Card>
+                </motion.div>
+              ))}
+          </div>
+        </div>
+      </section>
 
       {/* FAQs Section */}
         <section className="py-16 max-w-4xl mx-auto">
