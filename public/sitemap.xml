@@ -1,62 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  <url>
-    <loc>https://dialwise.ai/</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <video:video>
-      <video:thumbnail_loc>https://github.com/etaif725/dialwise2.0/blob/main/public/thumbnail.webp</video:thumbnail_loc>
-      <video:title>AI Voice Agents and chatbots that work 24/7 | DialWise.ai</video:title>
-      <video:description>Transform your customer service with DialWise.ai. Our advanced AI voice agents and chatbots provide 24/7 support, handle complex conversations, and deliver human-like interactions that drive business growth.</video:description>
-      <video:content_loc>https://www.youtube.com/watch?v=q1zqJpgoHf4</video:content_loc>
-      <video:duration>00:30</video:duration>
-      <video:publication_date>2024-12-01T00:00:00+00:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:watch_page>https://www.youtube.com/watch?v=q1zqJpgoHf4</video:watch_page>
-    </video:video>
-  </url>
-  <url>
-    <loc>https://dialwise.ai/about</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://dialwise.ai/features</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dialwise.ai/solutions</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dialwise.ai/faqs</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://dialwise.ai/contact</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dialwise.ai/status</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dialwise.ai/partners/affiliate</loc>
-    <lastmod>2024-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url>
+<loc>https://dialwise.ai/</loc>
+<lastmod>2025-01-19</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+<video:video>
+<video:thumbnail_loc>https://github.com/etaif725/dialwise2.0/blob/main/public/thumbnail.webp</video:thumbnail_loc>
+<video:title>AI Voice Agents and chatbots that work 24/7 | DialWise.ai</video:title>
+<video:description>Transform your customer service with DialWise.ai. Our advanced AI voice agents and chatbots provide 24/7 support, handle complex conversations, and deliver human-like interactions that drive business growth.</video:description>
+<video:content_loc>https://www.youtube.com/watch?v=q1zqJpgoHf4</video:content_loc>
+<video:duration>30</video:duration>
+<video:publication_date>2024-12-01T00:00:00+00:00</video:publication_date>
+<video:family_friendly>yes</video:family_friendly>
+</video:video>
+</url>
+<url>
+<loc>https://dialwise.ai/about</loc>
+<lastmod>2025-01-19</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://dialwise.ai/features</loc>
+<lastmod>2025-01-28</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://dialwise.ai/solutions</loc>
+<lastmod>2025-01-19</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://dialwise.ai/faqs</loc>
+<lastmod>2025-01-19</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://dialwise.ai/contact</loc>
+<lastmod>2024-12-06</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://dialwise.ai/status</loc>
+<lastmod>2025-01-19</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://dialwise.ai/partners/affiliate</loc>
+<lastmod>2025-01-28</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.5</priority>
+</url>
 </urlset>
