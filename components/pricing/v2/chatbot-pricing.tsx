@@ -15,25 +15,27 @@ interface ChatbotPricingProps {
 export default function ChatbotPricing({ isAnnual }: ChatbotPricingProps) {
   const tiers = [
     {
-      name: "Basic",
+      name: "Pay-as-You-Go",
       description: "Perfect for testing and small volumes",
-      pricePerMessage: 0.06,
+      pricePerMessage: 0.03,
       features: [
         "1 Chatbot Agent",
-        "Pay per message",
-        "Website widget only",
-        "Chat support only"
+        "Pay per Message (No Limit)",
+        "1 Channel (Website Widget Only)",
+        "Human hand-off included",
+        "Chat & Email support"
       ]
     },
     {
       name: "Team",
       description: "Ideal for growing businesses",
-      pricePerMessage: 0.05,
+      pricePerMessage: 14.99,
       features: [
-        "1 Chatbot Agents",
-        "50,000 messages included",
-        "Multi-channel integrations",
-        "Chat/Email support"
+        "Unlimited Chatbots - You pay per Human Seat",
+        "10,000 AI Messages each month",
+        "Multi-channel integrations (Facebook, Instagram, Discord, Telegram, Whatsapp)",
+        "Human hand-off included",
+        "Chat & Email support"
       ],
       popular: true
     },
@@ -106,7 +108,9 @@ export default function ChatbotPricing({ isAnnual }: ChatbotPricingProps) {
                 <div className="mb-6">
                   <p className="text-3xl font-bold">
                     ${tier.pricePerMessage}
-                    <span className="text-base text-muted-foreground">/message</span>
+                    <span className="text-base text-muted-foreground">
+                      {tier.name === "Pay-as-You-Go" ? " /Message" : " /User (Limited Offer)"}
+                    </span>
                   </p>
                 </div>
               ) : (
@@ -143,7 +147,7 @@ export default function ChatbotPricing({ isAnnual }: ChatbotPricingProps) {
             <TableRow>
               <TableHead className="w-[300px]">Feature</TableHead>
               <TableHead>Pay-as-You-Go</TableHead>
-              <TableHead>Pro</TableHead>
+              <TableHead>Team</TableHead>
               <TableHead>Enterprise</TableHead>
             </TableRow>
           </TableHeader>

@@ -16,7 +16,7 @@ interface VoiceAgentPricingProps {
 export default function VoiceAgentPricing({ isAnnual }: VoiceAgentPricingProps) {
   const tiers = [
     {
-      name: "Pay-as-You-Go",
+      name: "Starter",
       description: "Perfect for testing and small volumes",
       pricePerMinute: 0.7,
       features: [
@@ -29,14 +29,13 @@ export default function VoiceAgentPricing({ isAnnual }: VoiceAgentPricingProps) 
     {
       name: "Pro",
       description: "Ideal for growing businesses",
-      pricePerMinute: 0.65,
+      pricePerMinute: 0.64,
       features: [
-        "2 AI Voice Agents (Inbound/Outbound)",
+        "1 AI Voice Agents (Inbound only)",
         "Special discounts on credits",
         "Advanced voice features",
         "Priority support"
       ],
-      popular: true
     },
     {
       name: "Enterprise",
@@ -46,7 +45,8 @@ export default function VoiceAgentPricing({ isAnnual }: VoiceAgentPricingProps) 
         "Custom pricing",
         "Enterprise features",
         "Dedicated support"
-      ]
+      ],
+      popular: true
     }
   ];
 
@@ -148,7 +148,7 @@ export default function VoiceAgentPricing({ isAnnual }: VoiceAgentPricingProps) 
           <TableHeader>
             <TableRow>
               <TableHead className="w-[300px]">Feature</TableHead>
-              <TableHead>Pay-as-You-Go</TableHead>
+              <TableHead>Starter</TableHead>
               <TableHead>Pro</TableHead>
               <TableHead>Enterprise</TableHead>
             </TableRow>

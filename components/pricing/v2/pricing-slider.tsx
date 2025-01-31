@@ -23,7 +23,7 @@ export function PricingSlider({
   const [totalPrice, setTotalPrice] = useState(0);
 
   const limits = {
-    "Pay-as-You-Go": { min: 500, max: 1000 },
+    "Starter": { min: 500, max: 1000 },
     "Pro": { min: 2000, max: 10000 },
     "Enterprise": { min: 0, max: 0 },
   };
