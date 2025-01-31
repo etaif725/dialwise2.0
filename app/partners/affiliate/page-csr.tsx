@@ -61,7 +61,7 @@ const steps = [
   },
   {
     title: "Step 3: Start Earning",
-    description: "Share your link and earn up to 12.5% commission for each referral we successfully board.",
+    description: "Introduce DialWise to potential businesses and earn up to 10% commission for each referral we successfully board.",
     icon: Trophy,
     action: "Get Started",
     type: "lead",
@@ -234,9 +234,8 @@ export default function DWAffiliatePage() {
       </motion.section>
       
       {/* Benefits Section */}
-      <section className="py-16 px-4">
+      <section className="py-4 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Affiliate Benefits</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div
