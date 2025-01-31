@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "What are the commission rates?",
-    answer: "We offer tiered commission rates: 5% for Standard Partners (up to $10,000 monthly sales), 8.5% for Premium Partners ($10,001-$50,000), and 12.5% for Elite Partners (above $50,001). Commissions are paid monthly via PayPal, or bank transfer."
+    answer: "We offer tiered commission rates: 5% for Standard Partners (up to $10,000 monthly sales), 8% for Premium Partners ($10,001-$50,000), and 10% for Elite Partners (above $50,001). Commissions are paid monthly via PayPal, or bank transfer."
   },
   {
     question: "What marketing materials do you provide?",
@@ -96,7 +96,7 @@ const tiers = [
   },
   {
     name: "Premium Affiliate",
-    price: "8.5%",
+    price: "8%",
     popular: false,
     features: [
       "Monthly sales $10,001 - $50,000",
@@ -104,7 +104,7 @@ const tiers = [
   },
   {
     name: "Elite Affiliate",
-    price: "12.5%",
+    price: "10%",
     features: [
       "Monthly sales above $50,001",
     ],
