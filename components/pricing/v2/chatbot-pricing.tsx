@@ -32,10 +32,11 @@ export default function ChatbotPricing({ isAnnual }: ChatbotPricingProps) {
       pricePerMessage: 14.99,
       features: [
         "Unlimited Chatbots - You pay per Human Seat",
-        "10,000 AI Messages each month",
+        "1000 AI Messages each month",
         "Multi-channel integrations (Facebook, Instagram, Discord, Telegram, Whatsapp)",
         "Human hand-off included",
-        "Chat & Email support"
+        "Chat & Email support",
+        "$0.2 /Message over 1,000 messages"
       ],
       popular: true
     },
