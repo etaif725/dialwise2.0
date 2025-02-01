@@ -72,7 +72,7 @@ const benefits = [
   {
     icon: <DollarSign className="h-8 w-8" />,
     title: "High Ticket Products",
-    description: "Earn up to 12.5% on all referred First-Time-Depositor (FTD).",
+    description: "Earn up to 10% on all referred First-Time-Depositor (FTD).",
   },
   {
     icon: <Clock className="h-8 w-8" />,
@@ -234,7 +234,7 @@ export default function DWAffiliatePage() {
       </motion.section>
       
       {/* Benefits Section */}
-      <section className="py-4 px-4">
+      <section className="px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
