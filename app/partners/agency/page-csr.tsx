@@ -84,7 +84,7 @@ const tiers = [
     features: [
       "Up to 10 client accounts",
       "Basic White label dashboard",
-      "Chat & Email support",
+      "Chat & Priority Email support",
       "Basic re-billing options",
       "Standard API access",
       "Public training resources",
@@ -97,7 +97,7 @@ const tiers = [
     features: [
       "Up to 25 client accounts",
       "Advanced white label dashboard",
-      "Chat & Priority Email support",
+      "24/7 priority support",
       "Advanced Workflow Library Access",
       "Full API access",
       "Dedicated account manager",
