@@ -14,7 +14,6 @@ import ClientBoardingModal from "./client-boarding-modal";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/benefits", label: "Benefits" },
   { href: "/solutions", label: "Solutions" },
   { href: "/pricing", label: "Pricing" },
   { href: "/faqs", label: "FAQs" },
