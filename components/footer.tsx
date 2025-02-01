@@ -11,7 +11,6 @@ const sections = [
   {
     title: "Product",
     links: [
-      { label: "Benefits", href: "/benefits" },
       { label: "Solutions", href: "/solutions" },
       { label: "Pricing", href: "/pricing" },
       { label: "Savings Tool", href: "/tool" },
