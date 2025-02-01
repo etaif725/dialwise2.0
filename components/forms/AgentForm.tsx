@@ -191,7 +191,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
 
       {/* Agent-Specific Fields */}
 
-      {/* Real Estate Fields */}
+      {/* Real Estate Fields 
       {agentKey === "real-estate" && (
         <>
           <div>
@@ -239,9 +239,9 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             </select>
           </div>
         </>
-      )}
+      )} */}
 
-      {/* Moving Fields */}
+      {/* Moving Fields 
       {agentKey === "moving" && (
         <>
           <div>
@@ -305,9 +305,9 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             </select>
           </div>
         </>
-      )}
+      )} */}
 
-      {/* Solar Fields */}
+      {/* Solar Fields
       {agentKey === "solar" && (
         <>
           <div>
@@ -385,11 +385,12 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             />
           </div>
         </>
-      )}
+      )} */}
 
+      {/* Issue Description
       {agentKey === "support" && (
         <div className="space-y-4">
-          {/* Issue Description */}
+          
           <div>
             <label className="block text-sm font-medium mb-2 text-black dark:text-white">Issue Description</label>
             <textarea
@@ -402,7 +403,6 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             ></textarea>
           </div>
 
-          {/* Device Type */}
           <div>
             <label className="block text-sm font-medium mb-2 text-black dark:text-white">Device Type</label>
             <input
@@ -414,8 +414,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
               required
             />
           </div>
-
-          {/* Operating System */}
+          
           <div>
             <label className="block text-sm font-medium mb-2 text-black dark:text-white">Operating System</label>
             <select
@@ -434,7 +433,6 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             </select>
           </div>
 
-          {/* Urgency Level */}
           <div>
             <label className="block text-sm font-medium mb-2 text-black dark:text-white">Urgency Level</label>
             <select
@@ -451,9 +449,9 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
           </div>
 
         </div>
-      )}
+      )} */}
       
-      {agentKey === "hvac" && (
+      {/* {agentKey === "hvac" && (
         <>
           <div>
             <label className="block text-sm font-medium text-black dark:text-white" htmlFor="serviceType">
@@ -551,7 +549,7 @@ const AgentForm = ({ agentKey }: { agentKey: string }) => {
             />
           </div>
         </>
-      )}
+      )} */}
 
       {/* Submit Button */}
       <div className="mt-6">
